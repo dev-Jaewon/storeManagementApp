@@ -32,6 +32,17 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Lora-Regular.ttf",
+            "./assets/fonts/Lora-Bold.ttf",
+            "./assets/fonts/Lora-Italic.ttf",
+            "./assets/fonts/Lora-BoldItalic.ttf"
+          ]
+        }
       ]
     ],
     "experiments": {
