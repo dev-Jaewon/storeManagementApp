@@ -1,5 +1,5 @@
 import { View, StyleSheet, TextInput, StyleProp, TextStyle } from "react-native"
-import { CommText } from "./commText"
+import { CommText } from "./CommText"
 
 type LabelInputProps = {
   label?: string

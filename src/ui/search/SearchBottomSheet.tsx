@@ -1,6 +1,6 @@
 import { createUseBottomSheetModal } from "react-native-use-modal";
 import { View, StyleSheet } from "react-native";
-import { CommText } from "../common/commText";
+import { CommText } from "../common/CommText";
 import { BottomSheetLayout } from "../common/BottomSheetLayout";
 import { CommButton } from "../common/CommButton";
 import { Icons } from "../common/Icons";

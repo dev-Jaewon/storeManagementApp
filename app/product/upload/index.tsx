@@ -1,4 +1,4 @@
-import { CommText } from "@/src/ui/common/commText"
+import { CommText } from "@/src/ui/common/CommText"
 import { View } from "react-native"
 
 const Upload = () => {

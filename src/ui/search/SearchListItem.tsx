@@ -1,5 +1,5 @@
 import { View, StyleSheet, Image, TouchableOpacity } from "react-native"
-import { CommText } from "@/src/ui/common/commText"
+import { CommText } from "@/src/ui/common/CommText"
 import { ResponseSearch } from "@/src/util/typeApi/SearchType"
 import { useRouter } from "expo-router"
 

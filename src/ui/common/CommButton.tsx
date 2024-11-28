@@ -1,5 +1,5 @@
 import { StyleProp, TextStyle, TouchableOpacity, ViewStyle, StyleSheet } from "react-native"
-import { CommText } from "./commText"
+import { CommText } from "./CommText"
 
 type CommButtonProps = {
   text?: string;
