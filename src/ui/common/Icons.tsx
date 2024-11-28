@@ -103,304 +103,304 @@ import Work from '@/assets/icons/Work.svg';
 
 export const Icons = {
   User2: (props: SvgProps) => (
-    <User2 {...props} />
+    <User2 color={'black'} {...props} />
   ),
   User3: (props: SvgProps) => (
-    <User3 {...props} />
+    <User3 color={'black'} {...props} />
   ),
   Activity: (props: SvgProps) => (
-    <Activity {...props} />
+    <Activity color={'black'} {...props} />
   ),
   AddUser: (props: SvgProps) => (
-    <AddUser {...props} />
+    <AddUser color={'black'} {...props} />
   ),
   Avatar: (props: SvgProps) => (
-    <Avatar {...props} />
+    <Avatar color={'black'} {...props} />
   ),
   Bag_22: (props: SvgProps) => (
-    <Bag_22 {...props} />
+    <Bag_22 color={'black'} {...props} />
   ),
   Bag_33: (props: SvgProps) => (
-    <Bag_33 {...props} />
+    <Bag_33 color={'black'} {...props} />
   ),
   Bag: (props: SvgProps) => (
-    <Bag {...props} />
+    <Bag color={'black'} {...props} />
   ),
   Bookmark: (props: SvgProps) => (
-    <Bookmark {...props} />
+    <Bookmark color={'black'} {...props} />
   ),
   Buy: (props: SvgProps) => (
-    <Buy {...props} />
+    <Buy color={'black'} {...props} />
   ),
   Calendar: (props: SvgProps) => (
-    <Calendar {...props} />
+    <Calendar color={'black'} {...props} />
   ),
   CallMissed: (props: SvgProps) => (
-    <CallMissed {...props} />
+    <CallMissed color={'black'} {...props} />
   ),
   CallSilent: (props: SvgProps) => (
-    <CallSilent {...props} />
+    <CallSilent color={'black'} {...props} />
   ),
   Call: (props: SvgProps) => (
-    <Call {...props} />
+    <Call color={'black'} {...props} />
   ),
   Calling: (props: SvgProps) => (
-    <Calling {...props} />
+    <Calling color={'black'} {...props} />
   ),
   Camera: (props: SvgProps) => (
-    <Camera {...props} />
+    <Camera color={'black'} {...props} />
   ),
   Card: (props: SvgProps) => (
-    <Card {...props} />
+    <Card color={'black'} {...props} />
   ),
   Category: (props: SvgProps) => (
-    <Category {...props} />
+    <Category color={'black'} {...props} />
   ),
   Chart: (props: SvgProps) => (
-    <Chart {...props} />
+    <Chart color={'black'} {...props} />
   ),
   Chat_22: (props: SvgProps) => (
-    <Chat_22 {...props} />
+    <Chat_22 color={'black'} {...props} />
   ),
   Chat: (props: SvgProps) => (
-    <Chat {...props} />
+    <Chat color={'black'} {...props} />
   ),
   CloseSquare: (props: SvgProps) => (
-    <CloseSquare {...props} />
+    <CloseSquare color={'black'} {...props} />
   ),
   DangerCircle: (props: SvgProps) => (
-    <DangerCircle {...props} />
+    <DangerCircle color={'black'} {...props} />
   ),
   DangerTriangle: (props: SvgProps) => (
-    <DangerTriangle {...props} />
+    <DangerTriangle color={'black'} {...props} />
   ),
   Delete_22: (props: SvgProps) => (
-    <Delete_22 {...props} />
+    <Delete_22 color={'black'} {...props} />
   ),
   Delete: (props: SvgProps) => (
-    <Delete {...props} />
+    <Delete color={'black'} {...props} />
   ),
   Discount: (props: SvgProps) => (
-    <Discount {...props} />
+    <Discount color={'black'} {...props} />
   ),
   Discovery: (props: SvgProps) => (
-    <Discovery {...props} />
+    <Discovery color={'black'} {...props} />
   ),
   Document: (props: SvgProps) => (
-    <Document {...props} />
+    <Document color={'black'} {...props} />
   ),
   Download_11: (props: SvgProps) => (
-    <Download_11 {...props} />
+    <Download_11 color={'black'} {...props} />
   ),
   Download: (props: SvgProps) => (
-    <Download {...props} />
+    <Download color={'black'} {...props} />
   ),
   EditSquare: (props: SvgProps) => (
-    <EditSquare {...props} />
+    <EditSquare color={'black'} {...props} />
   ),
   Edit: (props: SvgProps) => (
-    <Edit {...props} />
+    <Edit color={'black'} {...props} />
   ),
   Emoji: (props: SvgProps) => (
-    <Emoji {...props} />
+    <Emoji color={'black'} {...props} />
   ),
   Filter_33: (props: SvgProps) => (
-    <Filter_33 {...props} />
+    <Filter_33 color={'black'} {...props} />
   ),
   Filter: (props: SvgProps) => (
-    <Filter {...props} />
+    <Filter color={'black'} {...props} />
   ),
   Folder: (props: SvgProps) => (
-    <Folder {...props} />
+    <Folder color={'black'} {...props} />
   ),
   Game: (props: SvgProps) => (
-    <Game {...props} />
+    <Game color={'black'} {...props} />
   ),
   Graph: (props: SvgProps) => (
-    <Graph {...props} />
+    <Graph color={'black'} {...props} />
   ),
   Heart: (props: SvgProps) => (
-    <Heart {...props} />
+    <Heart color={'black'} {...props} />
   ),
   Heart22: (props: SvgProps) => (
-    <Heart22 {...props} />
+    <Heart22 color={'black'} {...props} />
   ),
   Hide: (props: SvgProps) => (
-    <Hide {...props} />
+    <Hide color={'black'} {...props} />
   ),
   Home_22: (props: SvgProps) => (
-    <Home_22 {...props} />
+    <Home_22 color={'black'} {...props} />
   ),
   Home: (props: SvgProps) => (
     <Home {...props} />
   ),
   Image_33: (props: SvgProps) => (
-    <Image_33 {...props} />
+    <Image_33 color={'black'} {...props} />
   ),
   Image: (props: SvgProps) => (
-    <Image {...props} />
+    <Image color={'black'} {...props} />
   ),
   InfoSquare: (props: SvgProps) => (
-    <InfoSquare {...props} />
+    <InfoSquare color={'black'} {...props} />
   ),
   Location_22: (props: SvgProps) => (
-    <Location_22 {...props} />
+    <Location_22 color={'black'} {...props} />
   ),
   Location: (props: SvgProps) => (
-    <Location {...props} />
+    <Location color={'black'} {...props} />
   ),
   Lock: (props: SvgProps) => (
-    <Lock {...props} />
+    <Lock color={'black'} {...props} />
   ),
   Login_11: (props: SvgProps) => (
-    <Login_11 {...props} />
+    <Login_11 color={'black'} {...props} />
   ),
   Login: (props: SvgProps) => (
-    <Login {...props} />
+    <Login color={'black'} {...props} />
   ),
   Logout_11: (props: SvgProps) => (
-    <Logout_11 {...props} />
+    <Logout_11 color={'black'} {...props} />
   ),
   Logout: (props: SvgProps) => (
-    <Logout {...props} />
+    <Logout color={'black'} {...props} />
   ),
   Message: (props: SvgProps) => (
-    <Message {...props} />
+    <Message color={'black'} {...props} />
   ),
   MoreCircle: (props: SvgProps) => (
-    <MoreCircle {...props} />
+    <MoreCircle color={'black'} {...props} />
   ),
   MoreSquare: (props: SvgProps) => (
-    <MoreSquare {...props} />
+    <MoreSquare color={'black'} {...props} />
   ),
   Notification_22: (props: SvgProps) => (
-    <Notification_22 {...props} />
+    <Notification_22 color={'black'} {...props} />
   ),
   Notification_33: (props: SvgProps) => (
-    <Notification_33 {...props} />
+    <Notification_33 color={'black'} {...props} />
   ),
   Notification: (props: SvgProps) => (
-    <Notification {...props} />
+    <Notification color={'black'} {...props} />
   ),
   PaperDownload_11: (props: SvgProps) => (
-    <PaperDownload_11 {...props} />
+    <PaperDownload_11 color={'black'} {...props} />
   ),
   PaperDownload: (props: SvgProps) => (
-    <PaperDownload {...props} />
+    <PaperDownload color={'black'} {...props} />
   ),
   PaperFail: (props: SvgProps) => (
-    <PaperFail {...props} />
+    <PaperFail color={'black'} {...props} />
   ),
   PaperNegative: (props: SvgProps) => (
-    <PaperNegative {...props} />
+    <PaperNegative color={'black'} {...props} />
   ),
   PaperPlus: (props: SvgProps) => (
-    <PaperPlus {...props} />
+    <PaperPlus color={'black'} {...props} />
   ),
   PaperUpload_11: (props: SvgProps) => (
-    <PaperUpload_11 {...props} />
+    <PaperUpload_11 color={'black'} {...props} />
   ),
   PaperUpload: (props: SvgProps) => (
-    <PaperUpload {...props} />
+    <PaperUpload color={'black'} {...props} />
   ),
   Paper: (props: SvgProps) => (
-    <Paper {...props} />
+    <Paper color={'black'} {...props} />
   ),
   Password: (props: SvgProps) => (
-    <Password {...props} />
+    <Password color={'black'} {...props} />
   ),
   Play: (props: SvgProps) => (
-    <Play {...props} />
+    <Play color={'black'} {...props} />
   ),
   Plus: (props: SvgProps) => (
-    <Plus {...props} />
+    <Plus color={'black'} {...props} />
   ),
   Profile: (props: SvgProps) => (
-    <Profile {...props} />
+    <Profile color={'black'} {...props} />
   ),
   Qr: (props: SvgProps) => (
-    <Qr {...props} />
+    <Qr color={'black'} {...props} />
   ),
   Scan: (props: SvgProps) => (
-    <Scan {...props} />
+    <Scan color={'black'} {...props} />
   ),
   Search: (props: SvgProps) => (
-    <Search {...props} />
+    <Search color={'black'} {...props} />
   ),
   Send: (props: SvgProps) => (
-    <Send {...props} />
+    <Send color={'black'} {...props} />
   ),
   Setting_22: (props: SvgProps) => (
-    <Setting_22 {...props} />
+    <Setting_22 color={'black'} {...props} />
   ),
   Setting: (props: SvgProps) => (
-    <Setting {...props} />
+    <Setting color={'black'} {...props} />
   ),
   ShieldDone: (props: SvgProps) => (
-    <ShieldDone {...props} />
+    <ShieldDone color={'black'} {...props} />
   ),
   ShieldFail: (props: SvgProps) => (
-    <ShieldFail {...props} />
+    <ShieldFail color={'black'} {...props} />
   ),
   Show: (props: SvgProps) => (
-    <Show {...props} />
+    <Show color={'black'} {...props} />
   ),
   Star_22: (props: SvgProps) => (
-    <Star_22 {...props} />
+    <Star_22 color={'black'} {...props} />
   ),
   Star: (props: SvgProps) => (
-    <Star {...props} />
+    <Star color={'black'} {...props} />
   ),
   Swap: (props: SvgProps) => (
-    <Swap {...props} />
+    <Swap color={'black'} {...props} />
   ),
   TickSquare: (props: SvgProps) => (
-    <TickSquare {...props} />
+    <TickSquare color={'black'} {...props} />
   ),
   TicketStar: (props: SvgProps) => (
-    <TicketStar {...props} />
+    <TicketStar color={'black'} {...props} />
   ),
   Ticket: (props: SvgProps) => (
-    <Ticket {...props} />
+    <Ticket color={'black'} {...props} />
   ),
   TimeCircle: (props: SvgProps) => (
-    <TimeCircle {...props} />
+    <TimeCircle color={'black'} {...props} />
   ),
   TimeSquare: (props: SvgProps) => (
-    <TimeSquare {...props} />
+    <TimeSquare color={'black'} {...props} />
   ),
   Unlock: (props: SvgProps) => (
-    <Unlock {...props} />
+    <Unlock color={'black'} {...props} />
   ),
   Upload_11: (props: SvgProps) => (
-    <Upload_11 {...props} />
+    <Upload_11 color={'black'} {...props} />
   ),
   Upload: (props: SvgProps) => (
-    <Upload {...props} />
+    <Upload color={'black'} {...props} />
   ),
   Video: (props: SvgProps) => (
-    <Video {...props} />
+    <Video color={'black'} {...props} />
   ),
   Voice_33: (props: SvgProps) => (
-    <Voice_33 {...props} />
+    <Voice_33 color={'black'} {...props} />
   ),
   Voice: (props: SvgProps) => (
-    <Voice {...props} />
+    <Voice color={'black'} {...props} />
   ),
   VolumeDown: (props: SvgProps) => (
-    <VolumeDown {...props} />
+    <VolumeDown color={'black'} {...props} />
   ),
   VolumeOff: (props: SvgProps) => (
-    <VolumeOff {...props} />
+    <VolumeOff color={'black'} {...props} />
   ),
   VolumeUp: (props: SvgProps) => (
-    <VolumeUp {...props} />
+    <VolumeUp color={'black'} {...props} />
   ),
   Wallet: (props: SvgProps) => (
-    <Wallet {...props} />
+    <Wallet color={'black'} {...props} />
   ),
   Work: (props: SvgProps) => (
-    <Work {...props} />
+    <Work color={'black'} {...props} />
   ),
 };
 

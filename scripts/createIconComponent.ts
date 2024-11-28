@@ -25,7 +25,7 @@ svgFiles.forEach(file => {
   const componentName = pascalCase(file.replace('.svg', '').replace(/(\d+)\s+/, '').trim() + (file.match(/\d+/)?.[0] || ''));
   
   componentCode += `  ${componentName}: (props: SvgProps) => (
-    <${componentName} {...props} />
+    <${componentName} color={'black'} {...props} />
   ),\n`;
 });
 
