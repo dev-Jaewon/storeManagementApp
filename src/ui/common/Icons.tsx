@@ -4,6 +4,26 @@ import User2 from '@/assets/icons/2 User.svg';
 import User3 from '@/assets/icons/3 User.svg';
 import Activity from '@/assets/icons/Activity.svg';
 import AddUser from '@/assets/icons/Add User.svg';
+import ArrowDown_22 from '@/assets/icons/Arrow - Down 2.svg';
+import ArrowDown_33 from '@/assets/icons/Arrow - Down 3.svg';
+import ArrowDownCircle from '@/assets/icons/Arrow - Down Circle.svg';
+import ArrowDownSquare from '@/assets/icons/Arrow - Down Square.svg';
+import ArrowDown from '@/assets/icons/Arrow - Down.svg';
+import ArrowLeft_22 from '@/assets/icons/Arrow - Left 2.svg';
+import ArrowLeft_33 from '@/assets/icons/Arrow - Left 3.svg';
+import ArrowLeftCircle from '@/assets/icons/Arrow - Left Circle.svg';
+import ArrowLeftSquare from '@/assets/icons/Arrow - Left Square.svg';
+import ArrowLeft from '@/assets/icons/Arrow - Left.svg';
+import ArrowRight_22 from '@/assets/icons/Arrow - Right 2.svg';
+import ArrowRight_33 from '@/assets/icons/Arrow - Right 3.svg';
+import ArrowRightCircle from '@/assets/icons/Arrow - Right Circle.svg';
+import ArrowRightSquare from '@/assets/icons/Arrow - Right Square.svg';
+import ArrowRight from '@/assets/icons/Arrow - Right.svg';
+import ArrowUp_22 from '@/assets/icons/Arrow - Up 2.svg';
+import ArrowUp_33 from '@/assets/icons/Arrow - Up 3.svg';
+import ArrowUpCircle from '@/assets/icons/Arrow - Up Circle.svg';
+import ArrowUpSquare from '@/assets/icons/Arrow - Up Square.svg';
+import ArrowUp from '@/assets/icons/Arrow - Up.svg';
 import Avatar from '@/assets/icons/Avatar.svg';
 import Bag_22 from '@/assets/icons/Bag 2.svg';
 import Bag_33 from '@/assets/icons/Bag 3.svg';
@@ -82,6 +102,11 @@ import ShieldDone from '@/assets/icons/Shield Done.svg';
 import ShieldFail from '@/assets/icons/Shield Fail.svg';
 import Show from '@/assets/icons/Show.svg';
 import Star_22 from '@/assets/icons/Star 2.svg';
+import Star_33 from '@/assets/icons/Star 3.svg';
+import Star_44 from '@/assets/icons/Star 4.svg';
+import Star_55 from '@/assets/icons/Star 5.svg';
+import Star_66 from '@/assets/icons/Star 6.svg';
+import Star_77 from '@/assets/icons/Star 7.svg';
 import Star from '@/assets/icons/Star.svg';
 import Swap from '@/assets/icons/Swap.svg';
 import TickSquare from '@/assets/icons/Tick Square.svg';
@@ -113,6 +138,66 @@ export const Icons = {
   ),
   AddUser: (props: SvgProps) => (
     <AddUser color={'black'} {...props} />
+  ),
+  ArrowDown_22: (props: SvgProps) => (
+    <ArrowDown_22 color={'black'} {...props} />
+  ),
+  ArrowDown_33: (props: SvgProps) => (
+    <ArrowDown_33 color={'black'} {...props} />
+  ),
+  ArrowDownCircle: (props: SvgProps) => (
+    <ArrowDownCircle color={'black'} {...props} />
+  ),
+  ArrowDownSquare: (props: SvgProps) => (
+    <ArrowDownSquare color={'black'} {...props} />
+  ),
+  ArrowDown: (props: SvgProps) => (
+    <ArrowDown color={'black'} {...props} />
+  ),
+  ArrowLeft_22: (props: SvgProps) => (
+    <ArrowLeft_22 color={'black'} {...props} />
+  ),
+  ArrowLeft_33: (props: SvgProps) => (
+    <ArrowLeft_33 color={'black'} {...props} />
+  ),
+  ArrowLeftCircle: (props: SvgProps) => (
+    <ArrowLeftCircle color={'black'} {...props} />
+  ),
+  ArrowLeftSquare: (props: SvgProps) => (
+    <ArrowLeftSquare color={'black'} {...props} />
+  ),
+  ArrowLeft: (props: SvgProps) => (
+    <ArrowLeft color={'black'} {...props} />
+  ),
+  ArrowRight_22: (props: SvgProps) => (
+    <ArrowRight_22 color={'black'} {...props} />
+  ),
+  ArrowRight_33: (props: SvgProps) => (
+    <ArrowRight_33 color={'black'} {...props} />
+  ),
+  ArrowRightCircle: (props: SvgProps) => (
+    <ArrowRightCircle color={'black'} {...props} />
+  ),
+  ArrowRightSquare: (props: SvgProps) => (
+    <ArrowRightSquare color={'black'} {...props} />
+  ),
+  ArrowRight: (props: SvgProps) => (
+    <ArrowRight color={'black'} {...props} />
+  ),
+  ArrowUp_22: (props: SvgProps) => (
+    <ArrowUp_22 color={'black'} {...props} />
+  ),
+  ArrowUp_33: (props: SvgProps) => (
+    <ArrowUp_33 color={'black'} {...props} />
+  ),
+  ArrowUpCircle: (props: SvgProps) => (
+    <ArrowUpCircle color={'black'} {...props} />
+  ),
+  ArrowUpSquare: (props: SvgProps) => (
+    <ArrowUpSquare color={'black'} {...props} />
+  ),
+  ArrowUp: (props: SvgProps) => (
+    <ArrowUp color={'black'} {...props} />
   ),
   Avatar: (props: SvgProps) => (
     <Avatar color={'black'} {...props} />
@@ -232,7 +317,7 @@ export const Icons = {
     <Home_22 color={'black'} {...props} />
   ),
   Home: (props: SvgProps) => (
-    <Home {...props} />
+    <Home color={'black'} {...props} />
   ),
   Image_33: (props: SvgProps) => (
     <Image_33 color={'black'} {...props} />
@@ -347,6 +432,21 @@ export const Icons = {
   ),
   Star_22: (props: SvgProps) => (
     <Star_22 color={'black'} {...props} />
+  ),
+  Star_33: (props: SvgProps) => (
+    <Star_33 color={'black'} {...props} />
+  ),
+  Star_44: (props: SvgProps) => (
+    <Star_44 color={'black'} {...props} />
+  ),
+  Star_55: (props: SvgProps) => (
+    <Star_55 color={'black'} {...props} />
+  ),
+  Star_66: (props: SvgProps) => (
+    <Star_66 color={'black'} {...props} />
+  ),
+  Star_77: (props: SvgProps) => (
+    <Star_77 color={'black'} {...props} />
   ),
   Star: (props: SvgProps) => (
     <Star color={'black'} {...props} />

@@ -11,7 +11,7 @@ export const SearchListItem = ({ data }: SearchListItemProps) => {
   const router = useRouter();
 
   return <TouchableOpacity style={styles.container} onPress={() =>
-    router.push("/product/upload")
+    router.push(`/product/upload/${data.id}`)
   }>
     <Image source={{ uri: data.image_data[0].url }} style={styles.image} />
     <View style={styles.textContainer}>
