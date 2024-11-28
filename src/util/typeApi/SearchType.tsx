@@ -5,8 +5,10 @@ export type ImageData = {
 }
 
 export type ResponseSearch = {
+    id: number;
     url: string;
     brand: string;
     title: string;
     image_data: ImageData[];
+    createdat: string;
 }
