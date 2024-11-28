@@ -1,12 +1,11 @@
-import { StyleProp, Text, TextStyle } from "react-native";
+import { Text, TextProps } from "react-native";
 
 export type CommTextProps = {
-  style?: StyleProp<TextStyle>;
   children: React.ReactNode;
-};
+} & TextProps;
 
-export const CommText = ({ children, style }: CommTextProps) => {
+export const CommText = ({ children, style, ...props }: CommTextProps) => {
   return (
-    <Text style={[{ fontFamily: "Lora-Regular" }, style]}>{children}</Text>
+    <Text style={[{ fontFamily: "Lora-Regular" }, style]} {...props}>{children}</Text>
   );
 };
