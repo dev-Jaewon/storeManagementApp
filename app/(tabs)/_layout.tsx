@@ -30,7 +30,7 @@ export default function TabLayout() {
         options={{
           title: 'Explore',
           tabBarIcon: ({ focused }) => (
-            <Icons.Document 
+            <Icons.Document
               color={focused ? '#007AFF' : '#8E8E93'}
             />
           ),
@@ -41,7 +41,7 @@ export default function TabLayout() {
         options={{
           title: 'Explore',
           tabBarIcon: ({ focused }) => (
-            <Icons.Search 
+            <Icons.Search
               color={focused ? '#007AFF' : '#8E8E93'}
             />
           ),

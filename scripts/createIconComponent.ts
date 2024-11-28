@@ -23,7 +23,7 @@ componentCode += `\nexport const Icons = {\n`;
 // Add SVG components to Icons object with original filenames as keys
 svgFiles.forEach(file => {
   const componentName = pascalCase(file.replace('.svg', '').replace(/(\d+)\s+/, '').trim() + (file.match(/\d+/)?.[0] || ''));
-  
+
   componentCode += `  ${componentName}: (props: SvgProps) => (
     <${componentName} color={'black'} {...props} />
   ),\n`;
