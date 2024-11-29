@@ -6,6 +6,8 @@ export type CommTextProps = {
 
 export const CommText = ({ children, style, ...props }: CommTextProps) => {
   return (
-    <Text style={[{ fontFamily: "Lora-Regular" }, style]} {...props}>{children}</Text>
+    <Text style={[{ fontFamily: "Lora-Regular" }, style]} {...props}>
+      {children}
+    </Text>
   );
 };

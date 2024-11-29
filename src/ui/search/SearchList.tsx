@@ -1,14 +1,13 @@
-import { View, StyleSheet, FlatList, ActivityIndicator } from "react-native"
-import { SearchListItem } from "./SearchListItem"
-import { ResponseSearch } from "@/src/util/typeApi/SearchType"
+import { View, StyleSheet, FlatList, ActivityIndicator } from "react-native";
+import { SearchListItem } from "./SearchListItem";
+import { ResponseSearch } from "@/src/util/typeApi/SearchType";
 
 type SearchListProps = {
-  list: ResponseSearch[]
-  isLoading: boolean
-}
+  list: ResponseSearch[];
+  isLoading: boolean;
+};
 
 export const SearchList = ({ list, isLoading }: SearchListProps) => {
-
   return (
     <View style={styles.container}>
       {isLoading ? (
@@ -28,23 +27,23 @@ export const SearchList = ({ list, isLoading }: SearchListProps) => {
         />
       )}
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    height: '100%'
+    height: "100%",
   },
   loadingContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: "center",
+    alignItems: "center",
   },
   row: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 16,
-    marginBottom: 16
-  }
-})
+    marginBottom: 16,
+  },
+});
