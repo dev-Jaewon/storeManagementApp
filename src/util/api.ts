@@ -14,7 +14,11 @@ import {
   RequestUploadProduct,
   ResponseUploadProduct,
 } from "./typeApi/UploadType";
-import { RequestProducts, ResponseProducts } from "./typeApi/ProductsType";
+import {
+  RequestProducts,
+  ResponseProduct,
+  ResponseProducts,
+} from "./typeApi/ProductsType";
 
 const api = axios.create({
   // baseURL: 'http://localhost:8080'
@@ -80,5 +84,12 @@ export const getProducts = async (
   const response = await api.get(
     `naver/product?page=${data.page}&size=${data.size}&titleKeyword=${data.titleKeyword}`
   );
+  return response.data;
+};
+
+export const getProductDetail = async (
+  id: string
+): Promise<ResponseProduct> => {
+  const response = await api.get(`/naver/product/${id}`);
   return response.data;
 };

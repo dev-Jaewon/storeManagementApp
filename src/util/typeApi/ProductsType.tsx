@@ -1,4 +1,5 @@
 export type RequestProducts = productsPageInfo;
+export type ResponseProduct = Product;
 
 export type productsPageInfo = {
   page: number;
@@ -22,6 +23,8 @@ export type Product = {
   originproductno: string;
   title: string;
   price: ProductPrice;
+  detail_text: string[];
+  brand: string;
 };
 
 export type ProductPrice = {
