@@ -14,6 +14,7 @@ import {
   RequestUploadProduct,
   ResponseUploadProduct,
 } from "./typeApi/UploadType";
+import { RequestProducts, ResponseProducts } from "./typeApi/ProductsType";
 
 const api = axios.create({
   // baseURL: 'http://localhost:8080'
@@ -70,5 +71,14 @@ export const uploadProduct = async (
   data: RequestUploadProduct
 ): Promise<ResponseUploadProduct> => {
   const response = await api.post("/naver/upload", data);
+  return response.data;
+};
+
+export const getProducts = async (
+  data: RequestProducts
+): Promise<ResponseProducts> => {
+  const response = await api.get(
+    `naver/product?page=${data.page}&size=${data.size}&titleKeyword=${data.titleKeyword}`
+  );
   return response.data;
 };

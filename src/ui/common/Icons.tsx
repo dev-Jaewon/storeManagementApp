@@ -41,6 +41,7 @@ import Category from '@/assets/icons/Category.svg';
 import Chart from '@/assets/icons/Chart.svg';
 import Chat_22 from '@/assets/icons/Chat 2.svg';
 import Chat from '@/assets/icons/Chat.svg';
+import CloseSquareReverse from '@/assets/icons/Close Square Reverse.svg';
 import CloseSquare from '@/assets/icons/Close Square.svg';
 import DangerCircle from '@/assets/icons/Danger Circle.svg';
 import DangerTriangle from '@/assets/icons/Danger Triangle.svg';
@@ -249,6 +250,9 @@ export const Icons = {
   ),
   Chat: (props: SvgProps) => (
     <Chat color={'black'} {...props} />
+  ),
+  CloseSquareReverse: (props: SvgProps) => (
+    <CloseSquareReverse color={'black'} {...props} />
   ),
   CloseSquare: (props: SvgProps) => (
     <CloseSquare color={'black'} {...props} />
