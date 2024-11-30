@@ -26,7 +26,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="products"
         options={{
           tabBarIcon: ({ focused }) => (
             <Icons.Document color={focused ? "#007AFF" : "#8E8E93"} />
