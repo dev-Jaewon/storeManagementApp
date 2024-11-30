@@ -77,6 +77,8 @@ export const uploadProduct = async (
 export const getProducts = async (
   data: RequestProducts
 ): Promise<ResponseProducts> => {
-  const response = await api.get(`naver/product?page=0&size=10&titleKeyword=`);
+  const response = await api.get(
+    `naver/product?page=${data.page}&size=${data.size}&titleKeyword=${data.titleKeyword}`
+  );
   return response.data;
 };
