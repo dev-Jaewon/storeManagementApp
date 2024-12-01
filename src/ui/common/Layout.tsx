@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Platform } from "react-native";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -18,5 +18,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
+    ...Platform.select({
+      android: {
+        paddingTop: 15,
+      },
+    }),
   },
 });

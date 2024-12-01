@@ -1,4 +1,4 @@
-import { TouchableOpacity, StyleSheet } from "react-native";
+import { TouchableOpacity, StyleSheet, Platform } from "react-native";
 import { useSearchBottomSheet } from "./SearchBottomSheet";
 import { Icons } from "../common/Icons";
 
@@ -30,6 +30,25 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.15,
     shadowRadius: 19,
-    elevation: 19,
+    ...Platform.select({
+      android: {
+        elevation: 4,
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        backgroundColor: "white",
+      },
+      ios: {
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowOpacity: 0.15,
+        shadowRadius: 19,
+      },
+    }),
   },
 });

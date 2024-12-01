@@ -20,15 +20,14 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
+  content: {
+    width: "100%",
+  },
   topUnderLine: {
     height: 2,
     backgroundColor: "gray",
     width: 50,
     borderRadius: 10,
     marginVertical: 10,
-  },
-  content: {
-    flex: 1,
-    width: "100%",
   },
 });

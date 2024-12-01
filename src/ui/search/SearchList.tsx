@@ -18,7 +18,7 @@ export const SearchList = ({ list, isLoading }: SearchListProps) => {
         <FlatList
           data={list}
           renderItem={({ item }) => <SearchListItem data={item} />}
-          keyExtractor={(item) => item.toString()}
+          keyExtractor={(item) => item.id.toString()}
           numColumns={2}
           columnWrapperStyle={styles.row}
           showsVerticalScrollIndicator={false}

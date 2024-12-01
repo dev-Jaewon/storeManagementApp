@@ -12,6 +12,7 @@ import { ModalProvider } from "react-native-use-modal";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { RecoilRoot } from "recoil";
+import { useEffect } from "react";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -19,6 +20,10 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const queryClient = new QueryClient();
+
+  useEffect(() => {
+    SplashScreen.hideAsync();
+  }, []);
 
   return (
     <RecoilRoot>

@@ -56,7 +56,6 @@ export const useSearchBottomSheet = createUseBottomSheetModal(({ confirm }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     gap: 30,
     paddingVertical: 50,
     paddingHorizontal: 30,

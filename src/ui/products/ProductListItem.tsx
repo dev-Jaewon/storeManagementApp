@@ -4,6 +4,7 @@ import {
   Linking,
   Image,
   TouchableOpacity,
+  Platform,
 } from "react-native";
 import { Product } from "@/src/util/typeApi/ProductsType";
 import { CommText } from "../common/CommText";
@@ -62,11 +63,23 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 15,
 
-    shadowColor: "rgba(60, 64, 67, 0.4)",
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 1,
     shadowRadius: 2,
-    elevation: 4,
+
+    ...Platform.select({
+      web: {
+        elevation: 4,
+        shadowOpacity: 1,
+        shadowRadius: 2,
+        shadowColor: "rgba(60, 64, 67, 0.4)",
+      },
+      android: {
+        backgroundColor: "white",
+        elevation: 5,
+        shadowColor: "rgba(60, 64, 67, 0.6)",
+      },
+    }),
   },
   imageContainer: {
     alignItems: "center",
