@@ -1,9 +1,12 @@
-import { Text, View } from "react-native";
+import { Layout } from "@/src/ui/common/Layout";
+import { DashbordView } from "@/src/ui/home/DashbordView";
+import { AppNotificationHeader } from "@/src/ui/common/AppNotificationHeader";
 
 export default function HomeScreen() {
   return (
-    <View>
-      <Text>Home</Text>
-    </View>
+    <Layout>
+      <AppNotificationHeader />
+      <DashbordView />
+    </Layout>
   );
 }
