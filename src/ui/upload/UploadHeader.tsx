@@ -39,6 +39,7 @@ export const UploadHeader = ({
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 6,
     padding: 10,
     position: "relative",
     flexDirection: "row",

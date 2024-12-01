@@ -19,6 +19,11 @@ import {
   ResponseProduct,
   ResponseProducts,
 } from "./typeApi/ProductsType";
+import {
+  RequestOrderInfo,
+  ResponseOrderCount,
+  ResponseOrderInfo,
+} from "./typeApi/OrderState";
 
 const api = axios.create({
   // baseURL: 'http://localhost:8080'
@@ -91,5 +96,17 @@ export const getProductDetail = async (
   id: string
 ): Promise<ResponseProduct> => {
   const response = await api.get(`/naver/product/${id}`);
+  return response.data;
+};
+
+export const getOrderCount = async (): Promise<ResponseOrderCount> => {
+  const response = await api.get("/naver/order-state");
+  return response.data;
+};
+
+export const getOrderInfo = async (
+  state: RequestOrderInfo
+): Promise<ResponseOrderInfo> => {
+  const response = await api.get("/naver/order-info/" + state);
   return response.data;
 };
