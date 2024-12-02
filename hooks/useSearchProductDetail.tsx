@@ -3,8 +3,9 @@ import { useQuery } from "@tanstack/react-query";
 
 export const useSearchProductDetail = (id: string) => {
   const searchQuery = useQuery({
-    queryKey: ["search"],
+    queryKey: ["search", id],
     queryFn: () => getSearchProductDetail(id),
+    refetchOnWindowFocus: false,
   });
 
   return searchQuery;

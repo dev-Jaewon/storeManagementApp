@@ -1,22 +1,32 @@
-import { TouchableOpacity, StyleSheet } from "react-native";
+import { TouchableOpacity, StyleSheet, Platform } from "react-native";
 import { Icons } from "../common/Icons";
 import { useMutation } from "@tanstack/react-query";
 import { uploadProduct } from "@/src/util/api";
-import { useRecoilValue } from "recoil";
-import { uploadProductInfo } from "@/store/Upload";
+import { useRecoilState } from "recoil";
+import {
+  initialUploadProductInfo,
+  UploadProductInfo,
+  uploadProductInfo,
+} from "@/store/Upload";
 import { useRouter } from "expo-router";
 
 export const UploadButton = () => {
   const router = useRouter();
-  const uploadInfo = useRecoilValue(uploadProductInfo);
+  const [uploadInfo, setUploadInfo] = useRecoilState(uploadProductInfo);
 
   const uploadMutation = useMutation({
-    mutationFn: () => uploadProduct(uploadInfo),
+    mutationFn: (info: UploadProductInfo) => uploadProduct(info),
   });
 
   const handleUpload = () => {
-    uploadMutation.mutate();
-    router.back();
+    if (Platform.OS === "web") {
+      router.push("/search");
+    } else {
+      router.back();
+    }
+
+    uploadMutation.mutate(uploadInfo);
+    setUploadInfo(initialUploadProductInfo);
   };
 
   return (

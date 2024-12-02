@@ -3,6 +3,7 @@ import { CommText } from "../common/CommText";
 import { ExchangeCurrency as ExchangeCurrencyType } from "@/src/util/typeApi/ExchangeCurrency";
 import { useRecoilState } from "recoil";
 import { uploadProductInfo } from "@/store/Upload";
+import { useEffect } from "react";
 
 type ExchangeCurrencyProps = {
   exchangeRates: ExchangeCurrencyType[];
@@ -18,6 +19,12 @@ export const ExchangeCurrency = ({ exchangeRates }: ExchangeCurrencyProps) => {
       exchangeCurrencyPrice: price,
     }));
   };
+
+  useEffect(() => {
+    if (exchangeRates.length > 0) {
+      handleSelectedCurrency(exchangeRates[0].country, exchangeRates[0].price);
+    }
+  }, [exchangeRates]);
 
   return (
     <View style={styles.currencyContainer}>

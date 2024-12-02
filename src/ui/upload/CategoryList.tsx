@@ -1,7 +1,7 @@
 import { ScrollView, TouchableOpacity, StyleSheet } from "react-native";
 import { CommText } from "../common/CommText";
 import { Category } from "@/src/util/typeApi/CategoryType";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type CategoryListProps = {
   categories: Category[];
@@ -21,6 +21,10 @@ export const CategoryList = ({
     setSelectedCategory(category);
     setCategory(id);
   };
+
+  useEffect(() => {
+    handleSelectCategory(categories[0]);
+  }, [categories]);
 
   return (
     <ScrollView style={styles.categoryList}>

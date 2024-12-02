@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getWeightPerPrice } from "@/src/util/api";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { CommText } from "../common/CommText";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { LabelInput } from "../common/labelInput";
 import { ExchangeCurrency as ExchangeCurrencyType } from "@/src/util/typeApi/ExchangeCurrency";
 
@@ -40,6 +40,10 @@ export const WeightPerPrice = ({
     return Math.floor(weightPerPrice.us.price * usRate.price);
   };
 
+  useEffect(() => {
+    handleSelectCountry("일본", getJapanPriceInKRW());
+  }, [exchangeRates]);
+
   return (
     weightPerPrice && (
       <View style={styles.container}>
@@ -50,6 +54,39 @@ export const WeightPerPrice = ({
           label="제품 무게"
         />
         <View style={styles.weightContainer}>
+          <TouchableOpacity
+            style={[
+              styles.weightItem,
+              selectedCountry === "일본" && styles.selectedItem,
+            ]}
+            onPress={() => handleSelectCountry("일본", getJapanPriceInKRW())}
+          >
+            <CommText
+              style={[
+                styles.weightCountry,
+                selectedCountry === "일본" && styles.selectedText,
+              ]}
+            >
+              일본
+            </CommText>
+            <CommText
+              style={[
+                styles.weightPrice,
+                selectedCountry === "일본" && styles.selectedText,
+              ]}
+            >
+              {weightPerPrice.japan.price.toLocaleString()}엔 (
+              {getJapanPriceInKRW().toLocaleString()}원)
+            </CommText>
+            <CommText
+              style={[
+                styles.weightValue,
+                selectedCountry === "일본" && styles.selectedText,
+              ]}
+            >
+              {weightPerPrice.japan.weight}kg
+            </CommText>
+          </TouchableOpacity>
           <TouchableOpacity
             style={[
               styles.weightItem,
@@ -82,39 +119,6 @@ export const WeightPerPrice = ({
               ]}
             >
               {weightPerPrice.germany.weight}kg
-            </CommText>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[
-              styles.weightItem,
-              selectedCountry === "일본" && styles.selectedItem,
-            ]}
-            onPress={() => handleSelectCountry("일본", getJapanPriceInKRW())}
-          >
-            <CommText
-              style={[
-                styles.weightCountry,
-                selectedCountry === "일본" && styles.selectedText,
-              ]}
-            >
-              일본
-            </CommText>
-            <CommText
-              style={[
-                styles.weightPrice,
-                selectedCountry === "일본" && styles.selectedText,
-              ]}
-            >
-              {weightPerPrice.japan.price.toLocaleString()}엔 (
-              {getJapanPriceInKRW().toLocaleString()}원)
-            </CommText>
-            <CommText
-              style={[
-                styles.weightValue,
-                selectedCountry === "일본" && styles.selectedText,
-              ]}
-            >
-              {weightPerPrice.japan.weight}kg
             </CommText>
           </TouchableOpacity>
           <TouchableOpacity

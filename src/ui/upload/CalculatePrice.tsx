@@ -1,11 +1,12 @@
 import { View, StyleSheet } from "react-native";
 import { CommText } from "../common/CommText";
 import { LabelInput } from "../common/labelInput";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { calculatePrice } from "@/src/util/api";
 import { uploadProductInfo } from "@/store/Upload";
 import { useRecoilState } from "recoil";
+import { debounce } from "lodash";
 
 type CalculatePriceProps = {
   weightPrice: number;
@@ -39,6 +40,22 @@ export const CalculatePrice = ({ weightPrice }: CalculatePriceProps) => {
     }));
   }, [priceData]);
 
+  const handleChangePrice = useMemo(
+    () =>
+      debounce((text: string) => {
+        setuploadInfo({ ...uploadInfo, originPrice: Number(text) });
+      }, 500),
+    [uploadInfo.originPrice]
+  );
+
+  const handleChangeMargin = useMemo(
+    () =>
+      debounce((text: string) => {
+        setuploadInfo({ ...uploadInfo, margin: Number(text) });
+      }, 500),
+    [uploadInfo.margin]
+  );
+
   return (
     <View style={styles.container}>
       <View style={styles.priceContainer}>
@@ -56,10 +73,8 @@ export const CalculatePrice = ({ weightPrice }: CalculatePriceProps) => {
           <LabelInput
             placeholder="마진"
             label="마진"
-            onChangeText={(text) =>
-              setuploadInfo({ ...uploadInfo, margin: Number(text) })
-            }
-            value={uploadInfo.margin.toString()}
+            onChangeText={(text) => handleChangeMargin(text)}
+            defaultValue={uploadInfo.margin.toString()}
           />
         </View>
       </View>
@@ -67,10 +82,7 @@ export const CalculatePrice = ({ weightPrice }: CalculatePriceProps) => {
         <LabelInput
           placeholder="원가"
           label="원가"
-          onChangeText={(text) =>
-            setuploadInfo({ ...uploadInfo, originPrice: Number(text) })
-          }
-          value={uploadInfo.originPrice.toString()}
+          onChangeText={(text) => handleChangePrice(text)}
         />
       </View>
       <View style={styles.resultContainer}>
