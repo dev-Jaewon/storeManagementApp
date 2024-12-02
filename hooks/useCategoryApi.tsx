@@ -1,14 +1,9 @@
 import { getCategory } from "@/src/util/api";
-import { QueryKey, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
-type UseCategoryApiProps = {
-  keyword: string;
-  queryKey?: QueryKey;
-};
-
-export const useCategoryApi = ({ keyword, queryKey }: UseCategoryApiProps) => {
+export const useCategoryApi = (keyword: string) => {
   const query = useQuery({
-    queryKey: ["category", ...(queryKey || [])],
+    queryKey: ["category", keyword],
     queryFn: () => getCategory(keyword),
     enabled: keyword.length > 0,
   });

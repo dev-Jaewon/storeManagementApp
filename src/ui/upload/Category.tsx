@@ -13,7 +13,7 @@ import { uploadProductInfo } from "@/store/Upload";
 export const Category = () => {
   const [keyword, setKeyword] = useState("");
 
-  const { data: categories, isFetching } = useCategoryApi({ keyword });
+  const { data: categories, isFetching } = useCategoryApi(keyword);
 
   const setUploadProductInfo = useSetRecoilState(uploadProductInfo);
 
