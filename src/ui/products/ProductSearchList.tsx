@@ -2,6 +2,7 @@ import { useProductsApi } from "@/hooks/useProductsApi";
 import { StyleSheet, ScrollView, ActivityIndicator, View } from "react-native";
 import { ProductListItem } from "./ProductListItem";
 import { NoSearchData } from "../common/NoSearchData";
+import { CommText } from "../common/CommText";
 
 export const ProductSearchList = () => {
   const { data, isFetching } = useProductsApi();
@@ -31,11 +32,19 @@ export const ProductSearchList = () => {
   }
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      {data?.list?.map((product: any) => (
-        <ProductListItem key={product.id} product={product} />
-      ))}
-    </ScrollView>
+    <>
+      <CommText style={styles.resultText}>
+        검색 결과 : {data?.list?.length}개
+      </CommText>
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={styles.content}
+      >
+        {data?.list?.map((product: any) => (
+          <ProductListItem key={product.id} product={product} />
+        ))}
+      </ScrollView>
+    </>
   );
 };
 
@@ -46,11 +55,17 @@ const styles = StyleSheet.create({
   },
   content: {
     gap: 16,
-    paddingVertical: 16,
+    paddingBottom: 16,
   },
   loadingContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  resultText: {
+    fontSize: 17,
+    fontWeight: "bold",
+    paddingVertical: 16,
+    paddingLeft: 16,
   },
 });

@@ -1,4 +1,4 @@
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Platform } from "react-native";
 import { Icons } from "../common/Icons";
 import { CommText } from "../common/CommText";
 import { Notification } from "../common/Notification";
@@ -8,7 +8,9 @@ export const DetailHeader = () => {
   const router = useRouter();
 
   return (
-    <View style={styles.container}>
+    <View
+      style={[styles.container, Platform.OS === "web" && styles.webContainer]}
+    >
       <TouchableOpacity onPress={() => router.back()}>
         <Icons.ArrowLeft_22 />
       </TouchableOpacity>
@@ -20,15 +22,17 @@ export const DetailHeader = () => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 50,
+    height: 62,
     alignItems: "center",
-    marginTop: 6,
-    paddingHorizontal: 16,
+    padding: 16,
     flexDirection: "row",
     justifyContent: "space-between",
   },
   text: {
     fontSize: 14,
     fontWeight: "bold",
+  },
+  webContainer: {
+    backgroundColor: "#fff",
   },
 });

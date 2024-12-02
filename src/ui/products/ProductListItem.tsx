@@ -26,7 +26,11 @@ export const ProductListItem = ({ product }: ProductListItemProps) => {
     <TouchableOpacity style={styles.container} onPress={handlePress}>
       <View style={styles.infoContainer}>
         <View style={styles.imageContainer}>
-          <Image source={{ uri: product.image }} style={styles.image} />
+          <Image
+            source={{ uri: product.image }}
+            style={styles.image}
+            resizeMode="contain"
+          />
         </View>
         <View style={styles.info}>
           <CommText style={styles.brand}>ASICS</CommText>
@@ -87,16 +91,31 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     overflow: "hidden",
     borderRadius: 12,
+    maxWidth: 150,
+    flex: 1,
   },
   info: {
     flex: 1,
     paddingHorizontal: 10,
     justifyContent: "center",
     paddingLeft: 10,
+
+    ...Platform.select({
+      web: {
+        paddingLeft: 15,
+      },
+    }),
   },
   image: {
     width: 80,
     height: 80,
+
+    ...Platform.select({
+      web: {
+        height: "100%",
+        width: "100%",
+      },
+    }),
   },
   infoContainer: {
     flex: 1,
@@ -124,11 +143,23 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "blue",
     fontWeight: "bold",
+
+    ...Platform.select({
+      web: {
+        fontSize: 17,
+      },
+    }),
   },
   title: {
     fontSize: 13,
     color: "black",
     fontWeight: "bold",
+
+    ...Platform.select({
+      web: {
+        fontSize: 15,
+      },
+    }),
   },
   arrowContainer: {
     justifyContent: "center",
