@@ -27,7 +27,7 @@ export const ProductTitle = () => {
       setuploadInfo({
         ...uploadInfo,
         productName: searchQuery.data.title,
-        brandName: searchQuery.data.brand,
+        brandName: searchQuery.data.brand.toUpperCase(),
       });
     }
   }, [searchQuery.data]);
@@ -50,7 +50,15 @@ export const ProductTitle = () => {
             onChangeText={handleChangeBrand}
             placeholder="브랜드를 입력하세요"
             label="브랜드"
-            defaultValue={uploadInfo.brandName}
+            defaultValue={uploadInfo.brandName.toUpperCase()}
+          />
+        </View>
+        <View style={styles.inputContainer}>
+          <LabelInput
+            value={uploadInfo.originProductUrl}
+            placeholder="상품페이지 URL을 입력하세요"
+            label="상품페이지"
+            defaultValue={uploadInfo.originProductUrl}
           />
         </View>
       </>
