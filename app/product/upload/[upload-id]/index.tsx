@@ -1,4 +1,4 @@
-import { ScrollView } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import { Layout } from "@/src/ui/common/Layout";
 import { UploadHeader } from "@/src/ui/upload/UploadHeader";
 import { ContentView } from "@/src/ui/upload/ContentView";
@@ -11,7 +11,7 @@ const UploadView = () => {
   return (
     <Layout>
       <UploadHeader title="업로드" textStyle={{ fontSize: 15 }} />
-      <ScrollView>
+      <ScrollView style={styles.web_container}>
         <ProductTitle />
         <Category />
         <Options />
@@ -23,3 +23,9 @@ const UploadView = () => {
 };
 
 export default UploadView;
+
+const styles = StyleSheet.create({
+  web_container: {
+    backgroundColor: "#fff",
+  },
+});

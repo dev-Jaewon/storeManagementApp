@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Platform } from "react-native";
 
 export const BottomSheetLayout = ({
   children,
@@ -6,7 +6,9 @@ export const BottomSheetLayout = ({
   children: React.ReactNode;
 }) => {
   return (
-    <View style={styles.container}>
+    <View
+      style={[styles.container, Platform.OS === "web" && styles.web_container]}
+    >
       <View style={styles.topUnderLine} />
       <View style={styles.content}>{children}</View>
     </View>
@@ -29,5 +31,9 @@ const styles = StyleSheet.create({
     width: 50,
     borderRadius: 10,
     marginVertical: 10,
+  },
+  web_container: {
+    width: 600,
+    alignSelf: "center",
   },
 });

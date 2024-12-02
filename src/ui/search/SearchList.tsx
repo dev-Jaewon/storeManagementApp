@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     height: "100%",
+    backgroundColor: "#ebebeb",
   },
   loadingContainer: {
     flex: 1,

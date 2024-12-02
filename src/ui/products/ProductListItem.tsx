@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     aspectRatio: 2.4,
     borderRadius: 12,
     padding: 15,
+    backgroundColor: "white",
 
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 1,

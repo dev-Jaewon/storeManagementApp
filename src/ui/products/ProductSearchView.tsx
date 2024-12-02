@@ -1,10 +1,12 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Platform } from "react-native";
 import { ProductSearchBar } from "./ProductSearchBar";
 import { ProductFilter } from "./ProductFilter";
 
 export const ProductSearchView = () => {
   return (
-    <View style={styles.container}>
+    <View
+      style={[styles.container, Platform.OS === "web" && styles.web_container]}
+    >
       <ProductSearchBar />
       <ProductFilter />
     </View>
@@ -22,5 +24,8 @@ const styles = StyleSheet.create({
     gap: 16,
     borderBottomWidth: 1,
     borderBottomColor: "#dddee3",
+  },
+  web_container: {
+    backgroundColor: "#fff",
   },
 });

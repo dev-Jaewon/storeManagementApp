@@ -5,6 +5,7 @@ import {
   ViewStyle,
   TouchableOpacity,
   TextStyle,
+  Platform,
 } from "react-native";
 import { CommText } from "../common/CommText";
 import { Icons } from "../common/Icons";
@@ -25,7 +26,13 @@ export const UploadHeader = ({
   const router = useRouter();
 
   return (
-    <View style={[styles.container, containerStyle]}>
+    <View
+      style={[
+        styles.container,
+        containerStyle,
+        Platform.OS === "web" && styles.web_container,
+      ]}
+    >
       <TouchableOpacity onPress={() => router.back()} style={styles.icon}>
         <Icons.ArrowLeft_22 />
       </TouchableOpacity>
@@ -39,8 +46,9 @@ export const UploadHeader = ({
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 6,
-    padding: 10,
+    paddingTop: 16,
+    paddingBottom: 10,
+    paddingHorizontal: 10,
     position: "relative",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -57,5 +65,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     zIndex: 1000,
+  },
+  web_container: {
+    backgroundColor: "#fff",
   },
 });

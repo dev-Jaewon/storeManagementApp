@@ -21,7 +21,10 @@ export const ProductList = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView
+        style={styles.scrollView}
+        showsVerticalScrollIndicator={false}
+      >
         <View style={styles.listContainer}>
           {productsQuery.data?.list.map((product) => (
             <ProductListItem key={product.id} product={product} />

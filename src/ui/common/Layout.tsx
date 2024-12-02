@@ -17,7 +17,6 @@ export const Layout = ({ children }: LayoutProps) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
     ...Platform.select({
       android: {
         paddingTop: 15,

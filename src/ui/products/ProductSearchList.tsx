@@ -42,6 +42,7 @@ export const ProductSearchList = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingHorizontal: 16,
   },
   content: {
     gap: 16,

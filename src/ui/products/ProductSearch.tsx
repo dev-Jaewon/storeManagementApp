@@ -1,4 +1,4 @@
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Platform } from "react-native";
 import { CommText } from "../common/CommText";
 import { useRouter } from "expo-router";
 import {
@@ -29,7 +29,9 @@ export const ProductSearch = () => {
   );
 
   return (
-    <View style={styles.container}>
+    <View
+      style={[styles.container, Platform.OS === "web" && styles.web_container]}
+    >
       <SearchIconInput onChangeText={handleChangeTitleKeyword} />
       <TouchableOpacity onPress={handleCancel}>
         <CommText style={styles.cancel}>Cancel</CommText>
@@ -51,5 +53,8 @@ const styles = StyleSheet.create({
   cancel: {
     fontSize: 17,
     color: "#767676",
+  },
+  web_container: {
+    backgroundColor: "#fff",
   },
 });
