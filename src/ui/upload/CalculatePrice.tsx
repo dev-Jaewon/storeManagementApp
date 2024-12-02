@@ -15,14 +15,16 @@ type CalculatePriceProps = {
 export const CalculatePrice = ({ weightPrice }: CalculatePriceProps) => {
   const [uploadInfo, setuploadInfo] = useRecoilState(uploadProductInfo);
 
+  const dependencyList = [
+    weightPrice,
+    uploadInfo.margin,
+    uploadInfo.country,
+    uploadInfo.originPrice,
+    uploadInfo.exchangeCurrencyPrice,
+  ];
+
   const { data: priceData } = useQuery({
-    queryKey: [
-      "calculatePrice",
-      weightPrice,
-      uploadInfo.margin,
-      uploadInfo.originPrice,
-      uploadInfo.exchangeCurrencyPrice,
-    ],
+    queryKey: ["calculatePrice", ...dependencyList],
     queryFn: () =>
       calculatePrice({
         weightPrice: weightPrice,
@@ -42,18 +44,10 @@ export const CalculatePrice = ({ weightPrice }: CalculatePriceProps) => {
 
   const handleChangePrice = useMemo(
     () =>
-      debounce((text: string) => {
-        setuploadInfo({ ...uploadInfo, originPrice: Number(text) });
-      }, 500),
-    [uploadInfo.originPrice, uploadInfo.margin]
-  );
-
-  const handleChangeMargin = useMemo(
-    () =>
-      debounce((text: string) => {
-        setuploadInfo({ ...uploadInfo, margin: Number(text) });
-      }, 500),
-    [uploadInfo.margin, uploadInfo.originPrice]
+      debounce((text: string, property: string) => {
+        setuploadInfo({ ...uploadInfo, [property]: Number(text) });
+      }, 200),
+    dependencyList
   );
 
   return (
@@ -73,7 +67,7 @@ export const CalculatePrice = ({ weightPrice }: CalculatePriceProps) => {
           <LabelInput
             placeholder="마진"
             label="마진"
-            onChangeText={(text) => handleChangeMargin(text)}
+            onChangeText={(text) => handleChangePrice(text, "margin")}
             defaultValue={uploadInfo.margin.toString()}
           />
         </View>
@@ -82,7 +76,7 @@ export const CalculatePrice = ({ weightPrice }: CalculatePriceProps) => {
         <LabelInput
           placeholder="원가"
           label="원가"
-          onChangeText={(text) => handleChangePrice(text)}
+          onChangeText={(text) => handleChangePrice(text, "originPrice")}
         />
       </View>
       <View style={styles.resultContainer}>

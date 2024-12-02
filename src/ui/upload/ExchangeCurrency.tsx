@@ -21,7 +21,7 @@ export const ExchangeCurrency = ({ exchangeRates }: ExchangeCurrencyProps) => {
   };
 
   useEffect(() => {
-    if (exchangeRates.length > 0) {
+    if (exchangeRates.length > 0 && uploadInfo.country === "") {
       handleSelectedCurrency(exchangeRates[0].country, exchangeRates[0].price);
     }
   }, [exchangeRates, uploadInfo.country, uploadInfo.exchangeCurrencyPrice]);
