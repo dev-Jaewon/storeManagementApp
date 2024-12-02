@@ -9,9 +9,12 @@ import {
   uploadProductInfo,
 } from "@/store/Upload";
 import { useRouter } from "expo-router";
+import { ModalResultUpload } from "./ModalResultUpload";
+import { UPLOAD_PROPERTY } from "@/constants/UploadProperty";
 
 export const UploadButton = () => {
   const router = useRouter();
+  const resultModal = ModalResultUpload();
   const [uploadInfo, setUploadInfo] = useRecoilState(uploadProductInfo);
 
   const uploadMutation = useMutation({
@@ -19,6 +22,28 @@ export const UploadButton = () => {
   });
 
   const handleUpload = () => {
+    for (const key in uploadInfo) {
+      if (
+        typeof uploadInfo[key as keyof UploadProductInfo] === "string" &&
+        uploadInfo[key as keyof UploadProductInfo] === ""
+      ) {
+        resultModal.show({
+          content:
+            UPLOAD_PROPERTY[key as keyof UploadProductInfo] + "를 확인해주세요",
+        });
+        return;
+      } else if (
+        typeof uploadInfo[key as keyof UploadProductInfo] === "number" &&
+        uploadInfo[key as keyof UploadProductInfo] === 0
+      ) {
+        resultModal.show({
+          content:
+            UPLOAD_PROPERTY[key as keyof UploadProductInfo] + "를 확인해주세요",
+        });
+        return;
+      }
+    }
+
     if (Platform.OS === "web") {
       router.push("/search");
     } else {
