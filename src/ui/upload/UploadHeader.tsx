@@ -33,7 +33,16 @@ export const UploadHeader = ({
         Platform.OS === "web" && styles.web_container,
       ]}
     >
-      <TouchableOpacity onPress={() => router.back()} style={styles.icon}>
+      <TouchableOpacity
+        onPress={() => {
+          if (Platform.OS === "web") {
+            router.push("/search");
+          } else {
+            router.back();
+          }
+        }}
+        style={styles.icon}
+      >
         <Icons.ArrowLeft_22 />
       </TouchableOpacity>
       <View style={styles.titleWrapper}>

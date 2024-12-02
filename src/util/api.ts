@@ -24,6 +24,7 @@ import {
   ResponseOrderCount,
   ResponseOrderInfo,
 } from "./typeApi/OrderState";
+import { Notification } from "./typeApi/Notification";
 
 const api = axios.create({
   // baseURL: 'http://localhost:8080'
@@ -108,5 +109,10 @@ export const getOrderInfo = async (
   state: RequestOrderInfo
 ): Promise<ResponseOrderInfo> => {
   const response = await api.get("/naver/order-info/" + state);
+  return response.data;
+};
+
+export const getNotification = async (): Promise<Notification[]> => {
+  const response = await api.get("/naver/notification");
   return response.data;
 };
