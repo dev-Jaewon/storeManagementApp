@@ -45,7 +45,7 @@ export const CalculatePrice = ({ weightPrice }: CalculatePriceProps) => {
       debounce((text: string) => {
         setuploadInfo({ ...uploadInfo, originPrice: Number(text) });
       }, 500),
-    [uploadInfo.originPrice]
+    [uploadInfo.originPrice, uploadInfo.margin]
   );
 
   const handleChangeMargin = useMemo(
@@ -53,7 +53,7 @@ export const CalculatePrice = ({ weightPrice }: CalculatePriceProps) => {
       debounce((text: string) => {
         setuploadInfo({ ...uploadInfo, margin: Number(text) });
       }, 500),
-    [uploadInfo.margin]
+    [uploadInfo.margin, uploadInfo.originPrice]
   );
 
   return (
