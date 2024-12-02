@@ -33,7 +33,7 @@ export const ProductListItem = ({ product }: ProductListItemProps) => {
           />
         </View>
         <View style={styles.info}>
-          <CommText style={styles.brand}>ASICS</CommText>
+          <CommText style={styles.brand}>{product.brand}</CommText>
           <CommText style={styles.title}>{product.title}</CommText>
         </View>
         <View style={styles.arrowContainer}>
