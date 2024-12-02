@@ -20,7 +20,7 @@ export const NotificationView = () => {
       {notification.map((item: Notification) => (
         <NotificationListItem
           key={item.id}
-          type={"error"}
+          type={item.type}
           message={item.message}
           createdAt={item.created_at}
         />
@@ -33,5 +33,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+    gap: 16,
   },
 });
