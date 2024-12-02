@@ -1,5 +1,3 @@
-import { getSearchProductDetail } from "@/src/util/api";
-import { useQuery } from "@tanstack/react-query";
 import { useLocalSearchParams } from "expo-router";
 import { View, StyleSheet, ScrollView } from "react-native";
 import { CommText } from "../common/CommText";
@@ -7,15 +5,13 @@ import { ImageList } from "./ImageList";
 import { useEffect } from "react";
 import { useSetRecoilState } from "recoil";
 import { uploadProductInfo } from "@/store/Upload";
+import { useSearchProductDetail } from "@/hooks/useSearchProductDetail";
 
 export const ContentView = () => {
   const params = useLocalSearchParams<{ "upload-id": string }>();
   const setuploadInfo = useSetRecoilState(uploadProductInfo);
 
-  const searchQuery = useQuery({
-    queryKey: ["search"],
-    queryFn: () => getSearchProductDetail(params["upload-id"]),
-  });
+  const searchQuery = useSearchProductDetail(params["upload-id"]);
 
   useEffect(() => {
     if (searchQuery.data) {

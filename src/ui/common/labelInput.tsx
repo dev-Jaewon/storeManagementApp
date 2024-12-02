@@ -14,6 +14,7 @@ type LabelInputProps = {
   labelStyle?: StyleProp<TextStyle>;
   onChangeText?: (text: string) => void;
   value?: string;
+  defaultValue?: string;
 };
 
 export const LabelInput = ({
@@ -23,6 +24,7 @@ export const LabelInput = ({
   labelStyle,
   onChangeText,
   value,
+  defaultValue,
 }: LabelInputProps) => {
   return (
     <View style={styles.container}>
@@ -33,6 +35,7 @@ export const LabelInput = ({
         placeholderTextColor="#999"
         onChangeText={onChangeText}
         value={value}
+        defaultValue={defaultValue}
       />
     </View>
   );
