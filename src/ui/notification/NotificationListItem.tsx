@@ -16,8 +16,22 @@ export const NotificationListItem = ({
   return (
     <View style={styles.container}>
       <View style={styles.contenxt}>
-        <CommText style={styles.notificationFilterType}>{type}</CommText>
-        <CommText style={styles.notificationMessage}>{message}</CommText>
+        <CommText
+          style={[
+            styles.notificationFilterType,
+            type === "오류" && styles.errorMessage,
+          ]}
+        >
+          {type}
+        </CommText>
+        <CommText
+          style={[
+            styles.notificationMessage,
+            type === "오류" && styles.errorMessage,
+          ]}
+        >
+          {message}
+        </CommText>
         <CommText style={styles.createdAt}>{formatDate(createdAt)}</CommText>
       </View>
       <View style={styles.circleContainer}>
@@ -80,5 +94,8 @@ const styles = StyleSheet.create({
     height: 10,
     borderRadius: 100,
     backgroundColor: "red",
+  },
+  errorMessage: {
+    color: "red",
   },
 });
