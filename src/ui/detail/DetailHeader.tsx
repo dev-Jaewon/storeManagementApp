@@ -7,11 +7,23 @@ import { useRouter } from "expo-router";
 export const DetailHeader = () => {
   const router = useRouter();
 
+  const handleBack = () => {
+    if (Platform.OS === "web") {
+      if (router.canGoBack()) {
+        router.back();
+      } else {
+        router.push("/products");
+      }
+    } else {
+      router.back();
+    }
+  };
+
   return (
     <View
       style={[styles.container, Platform.OS === "web" && styles.webContainer]}
     >
-      <TouchableOpacity onPress={() => router.back()}>
+      <TouchableOpacity onPress={handleBack}>
         <Icons.ArrowLeft_22 />
       </TouchableOpacity>
       <CommText style={styles.text}>상품 상세</CommText>

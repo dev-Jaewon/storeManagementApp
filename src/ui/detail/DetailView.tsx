@@ -12,7 +12,11 @@ export const DetailView = ({ product }: DetailViewProps) => {
     <>
       <ScrollView style={styles.container}>
         <View>
-          <Image source={{ uri: product?.image }} style={styles.image} />
+          <Image
+            source={{ uri: product?.image }}
+            style={styles.image}
+            resizeMode="contain"
+          />
         </View>
         <View style={styles.infoContainer}>
           <View>
@@ -58,10 +62,14 @@ export const DetailView = ({ product }: DetailViewProps) => {
             </CommText>
           </View>
           <View style={styles.divider} />
-          <View>
+          <View style={styles.detailContainer}>
             <CommText style={styles.detailInfo}>상세정보</CommText>
             {product?.detail_text.map((url, index) => (
-              <Image source={{ uri: url }} style={styles.detailImage} />
+              <Image
+                source={{ uri: url }}
+                style={styles.detailImage}
+                key={index}
+              />
             ))}
           </View>
         </View>
@@ -77,6 +85,7 @@ export const DetailView = ({ product }: DetailViewProps) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "white",
   },
   image: {
     width: "100%",
@@ -151,5 +160,8 @@ const styles = StyleSheet.create({
     width: "100%",
     aspectRatio: 1,
     resizeMode: "contain",
+  },
+  detailContainer: {
+    gap: 20,
   },
 });
