@@ -1,9 +1,9 @@
 import {
   View,
   Image,
-  FlatList,
   StyleSheet,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { ImageData } from "@/src/util/typeApi/SearchType";
 import { CommText } from "../common/CommText";
@@ -36,41 +36,41 @@ export const ImageList = ({ imageData }: ImageListProps) => {
 
   return (
     <CommonCollapsed title="이미지">
-      <FlatList
-        data={imageData}
-        numColumns={3}
-        scrollEnabled={true}
-        renderItem={({ item }) => {
-          const selectedIndex = uploadInfo.images.findIndex(
-            (image) => image.url === item.url
-          );
-          const isSelected = selectedIndex !== -1;
-          return (
-            <TouchableOpacity
-              style={styles.imageContainer}
-              onPress={() => toggleImageSelection(item.url)}
-            >
-              <Image
-                source={{ uri: item.url }}
-                style={[styles.image, isSelected && styles.selectedImage]}
-                resizeMode="contain"
-              />
-              <View style={styles.sizeContainer}>
-                <CommText style={styles.sizeText}>
-                  {item.width} x {item.height}
-                </CommText>
-              </View>
-              {isSelected && (
-                <View style={styles.selectedOverlay}>
-                  <CommText style={styles.orderNumber}>
-                    {selectedIndex + 1}
+      <ScrollView>
+        <View style={styles.imageGrid}>
+          {imageData?.map((item, index) => {
+            const selectedIndex = uploadInfo.images.findIndex(
+              (image) => image.url === item.url
+            );
+            const isSelected = selectedIndex !== -1;
+            return (
+              <TouchableOpacity
+                key={index}
+                style={styles.imageContainer}
+                onPress={() => toggleImageSelection(item.url)}
+              >
+                <Image
+                  source={{ uri: item.url }}
+                  style={[styles.image, isSelected && styles.selectedImage]}
+                  resizeMode="contain"
+                />
+                <View style={styles.sizeContainer}>
+                  <CommText style={styles.sizeText}>
+                    {item.width} x {item.height}
                   </CommText>
                 </View>
-              )}
-            </TouchableOpacity>
-          );
-        }}
-      />
+                {isSelected && (
+                  <View style={styles.selectedOverlay}>
+                    <CommText style={styles.orderNumber}>
+                      {selectedIndex + 1}
+                    </CommText>
+                  </View>
+                )}
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+      </ScrollView>
     </CommonCollapsed>
   );
 };
@@ -104,8 +104,12 @@ const styles = StyleSheet.create({
     color: "#007AFF",
     fontSize: 14,
   },
+  imageGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
   imageContainer: {
-    flex: 1 / 3,
+    width: "33.33%",
     aspectRatio: 1,
     padding: 1,
     position: "relative",

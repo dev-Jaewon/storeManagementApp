@@ -1,5 +1,5 @@
 import { useLocalSearchParams } from "expo-router";
-import { View, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { CommText } from "../common/CommText";
 import { ImageList } from "./ImageList";
 import { useEffect } from "react";
@@ -35,18 +35,13 @@ export const ContentView = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-        <ImageList imageData={searchQuery.data?.image_data} />
-      </ScrollView>
+      <ImageList imageData={searchQuery.data?.image_data} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-  },
-  scrollContainer: {
     flex: 1,
   },
 });
