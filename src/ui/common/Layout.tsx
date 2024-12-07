@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import { View, StyleSheet, Platform } from "react-native";
+import { StyleSheet, StatusBar, SafeAreaView } from "react-native";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -7,20 +7,16 @@ type LayoutProps = {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <>
+    <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor="#ffffff" />
       <Stack.Screen options={{ headerShown: false }} />
-      <View style={styles.container}>{children}</View>
-    </>
+      {children}
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    ...Platform.select({
-      android: {
-        paddingTop: 15,
-      },
-    }),
   },
 });

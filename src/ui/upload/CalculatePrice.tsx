@@ -17,6 +17,9 @@ export const CalculatePrice = ({ weightPrice }: CalculatePriceProps) => {
 
   const dependencyList = [
     weightPrice,
+    uploadInfo.productName,
+    uploadInfo.brandName,
+    uploadInfo.category,
     uploadInfo.margin,
     uploadInfo.country,
     uploadInfo.originPrice,

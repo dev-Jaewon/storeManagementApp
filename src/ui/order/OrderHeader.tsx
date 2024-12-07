@@ -1,4 +1,4 @@
-import { View, StyleSheet, TouchableOpacity, Platform } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { Icons } from "../common/Icons";
 import { CommText } from "../common/CommText";
 import { Notification } from "../common/Notification";
@@ -12,9 +12,7 @@ export const OrderHeader = ({ text }: OrderHeaderProps) => {
   const router = useRouter();
 
   return (
-    <View
-      style={[styles.container, Platform.OS === "web" && styles.webContainer]}
-    >
+    <View style={[styles.container]}>
       <TouchableOpacity onPress={() => router.back()}>
         <Icons.ArrowLeft_22 />
       </TouchableOpacity>
@@ -32,12 +30,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15.5,
     flexDirection: "row",
     justifyContent: "space-between",
+    backgroundColor: "#ffffff",
   },
   text: {
     fontSize: 14,
     fontWeight: "bold",
-  },
-  webContainer: {
-    backgroundColor: "#fff",
   },
 });

@@ -1,4 +1,10 @@
-import { View, StyleSheet, TouchableOpacity, Linking } from "react-native";
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Linking,
+  Platform,
+} from "react-native";
 import { Icons } from "../common/Icons";
 import { CommText } from "../common/CommText";
 
@@ -49,9 +55,22 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 5,
-    fontSize: 14,
-    fontWeight: "bold",
-    opacity: 0.7,
+
+    ...Platform.select({
+      web: {
+        fontSize: 14,
+        fontWeight: "bold",
+        opacity: 0.7,
+      },
+      android: {
+        fontSize: 12,
+        fontWeight: "bold",
+      },
+      ios: {
+        fontSize: 12,
+        fontWeight: "bold",
+      },
+    }),
   },
   divider: {
     fontSize: 14,

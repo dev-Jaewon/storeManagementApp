@@ -1,12 +1,9 @@
-import { View, StyleSheet, Platform, TouchableOpacity } from "react-native";
+import { StyleSheet, Platform, TouchableOpacity } from "react-native";
 import { CommText } from "./CommText";
-import { Icons } from "./Icons";
-import { useNotificationApi } from "@/hooks/useNotificationApi";
 import { useRouter } from "expo-router";
-
+import { Notification } from "./Notification";
 export const AppNotificationHeader = () => {
   const router = useRouter();
-  const notification = useNotificationApi();
 
   return (
     <TouchableOpacity
@@ -16,12 +13,7 @@ export const AppNotificationHeader = () => {
       }}
     >
       <CommText style={styles.text}>StoreManagement</CommText>
-      <Icons.Notification width={30} height={30} />
-      <View style={styles.notificationCount}>
-        <CommText style={styles.notificationCountText}>
-          {notification.length}
-        </CommText>
-      </View>
+      <Notification />
     </TouchableOpacity>
   );
 };
@@ -32,27 +24,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     position: "relative",
+    backgroundColor: "#ffffff",
   },
   text: {
     fontSize: 20,
     fontWeight: "bold",
   },
   web_container: {
-    backgroundColor: "#fff",
-  },
-  notificationCount: {
-    margin: 8,
-    position: "absolute",
-    right: 0,
-    top: 0,
-    borderRadius: 100,
-    width: 20,
-    height: 20,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "red",
-  },
-  notificationCountText: {
-    color: "#fff",
+    backgroundColor: "#ffffff",
   },
 });

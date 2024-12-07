@@ -68,12 +68,34 @@ const styles = StyleSheet.create({
     }),
   },
   notificationFilterType: {
-    fontSize: 17,
     fontWeight: "bold",
+
+    ...Platform.select({
+      web: {
+        fontSize: 17,
+      },
+      android: {
+        fontSize: 14,
+      },
+      ios: {
+        fontSize: 14,
+      },
+    }),
   },
   notificationMessage: {
-    fontSize: 17,
     fontWeight: "bold",
+
+    ...Platform.select({
+      web: {
+        fontSize: 15,
+      },
+      android: {
+        fontSize: 14,
+      },
+      ios: {
+        fontSize: 14,
+      },
+    }),
   },
   createdAt: {
     fontSize: 12,

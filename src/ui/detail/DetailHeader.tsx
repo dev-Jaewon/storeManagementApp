@@ -20,9 +20,7 @@ export const DetailHeader = () => {
   };
 
   return (
-    <View
-      style={[styles.container, Platform.OS === "web" && styles.webContainer]}
-    >
+    <View style={[styles.container]}>
       <TouchableOpacity onPress={handleBack}>
         <Icons.ArrowLeft_22 />
       </TouchableOpacity>
@@ -39,12 +37,10 @@ const styles = StyleSheet.create({
     padding: 16,
     flexDirection: "row",
     justifyContent: "space-between",
+    backgroundColor: "#ffffff",
   },
   text: {
     fontSize: 14,
     fontWeight: "bold",
-  },
-  webContainer: {
-    backgroundColor: "#fff",
   },
 });

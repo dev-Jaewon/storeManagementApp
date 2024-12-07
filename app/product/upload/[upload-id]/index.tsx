@@ -27,5 +27,6 @@ export default UploadView;
 const styles = StyleSheet.create({
   web_container: {
     backgroundColor: "#fff",
+    flex: 1,
   },
 });

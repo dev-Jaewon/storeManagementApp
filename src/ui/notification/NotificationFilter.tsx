@@ -1,4 +1,4 @@
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Platform } from "react-native";
 import { CommText } from "../common/CommText";
 import { notificationFilterList } from "@/store/Notification";
 import { useRecoilState } from "recoil";
@@ -34,13 +34,37 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 16,
     backgroundColor: "#fff",
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
     borderColor: "#ccc",
+
+    ...Platform.select({
+      web: {
+        borderTopWidth: 1,
+        borderBottomWidth: 1,
+      },
+      ios: {
+        borderTopWidth: 0.5,
+        borderBottomWidth: 0.5,
+      },
+      android: {
+        borderTopWidth: 0.5,
+        borderBottomWidth: 0.5,
+      },
+    }),
   },
   text: {
-    fontSize: 16,
     padding: 16,
     fontWeight: "bold",
+
+    ...Platform.select({
+      web: {
+        fontSize: 16,
+      },
+      android: {
+        fontSize: 14,
+      },
+      ios: {
+        fontSize: 14,
+      },
+    }),
   },
 });

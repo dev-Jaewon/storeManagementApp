@@ -26,13 +26,7 @@ export const UploadHeader = ({
   const router = useRouter();
 
   return (
-    <View
-      style={[
-        styles.container,
-        containerStyle,
-        Platform.OS === "web" && styles.web_container,
-      ]}
-    >
+    <View style={[styles.container, containerStyle]}>
       <TouchableOpacity
         onPress={() => {
           if (Platform.OS === "web") {
@@ -62,6 +56,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    backgroundColor: "#ffffff",
   },
   titleWrapper: {
     position: "absolute",
@@ -74,8 +69,5 @@ const styles = StyleSheet.create({
   },
   icon: {
     zIndex: 1000,
-  },
-  web_container: {
-    backgroundColor: "#fff",
   },
 });

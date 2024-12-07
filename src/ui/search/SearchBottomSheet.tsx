@@ -1,5 +1,5 @@
 import { createUseBottomSheetModal } from "react-native-use-modal";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Platform } from "react-native";
 import { CommText } from "../common/CommText";
 import { BottomSheetLayout } from "../common/BottomSheetLayout";
 import { CommButton } from "../common/CommButton";
@@ -39,12 +39,14 @@ export const useSearchBottomSheet = createUseBottomSheetModal(({ confirm }) => {
           placeholder="URL을 입력해주세요."
           onChangeText={setUrl}
           value={url}
+          labelStyle={styles.labelStyle}
         />
         <LabelInput
           label={"상품명"}
           placeholder="상품명을 입력해주세요."
           onChangeText={setTitle}
           value={title}
+          labelStyle={styles.labelStyle}
         />
         <CommButton onPress={handleConfirm}>
           <Icons.Scan color="white" />
@@ -61,17 +63,40 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
   },
   title: {
-    fontSize: 20,
-    fontWeight: "600",
     color: "#454545",
+
+    ...Platform.select({
+      web: {
+        fontSize: 20,
+      },
+      android: {
+        fontSize: 20,
+        fontWeight: "bold",
+      },
+      ios: {
+        fontSize: 20,
+        fontWeight: "bold",
+      },
+    }),
   },
   titleContainer: {
     gap: 10,
   },
   description: {
-    fontSize: 12,
-    fontWeight: "400",
     color: "#999",
+
+    ...Platform.select({
+      web: {
+        fontSize: 12,
+        fontWeight: "400",
+      },
+      android: {
+        fontSize: 16,
+      },
+      ios: {
+        fontSize: 16,
+      },
+    }),
   },
   topUnderLine: {
     height: 1,
@@ -83,5 +108,17 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#dddee3",
     paddingBottom: 10,
+  },
+  labelStyle: {
+    ...Platform.select({
+      android: {
+        fontSize: 15,
+        fontWeight: "bold",
+      },
+      ios: {
+        fontSize: 15,
+        fontWeight: "bold",
+      },
+    }),
   },
 });

@@ -29,9 +29,7 @@ export const ProductSearch = () => {
   );
 
   return (
-    <View
-      style={[styles.container, Platform.OS === "web" && styles.web_container]}
-    >
+    <View style={[styles.container]}>
       <SearchIconInput onChangeText={handleChangeTitleKeyword} />
       <TouchableOpacity onPress={handleCancel}>
         <CommText style={styles.cancel}>Cancel</CommText>
@@ -48,13 +46,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     borderBottomWidth: 1,
     borderBottomColor: "#dddee3",
+    backgroundColor: "#ffffff",
   },
 
   cancel: {
     fontSize: 17,
     color: "#767676",
-  },
-  web_container: {
-    backgroundColor: "#fff",
   },
 });
