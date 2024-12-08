@@ -1,20 +1,29 @@
 import { itemState } from "@/store/GroubReservation";
-import { TextInput } from "react-native";
-import { useSetRecoilState } from "recoil";
+import { StyleSheet, View } from "react-native";
+import { useRecoilState } from "recoil";
+import { CommText } from "../common/CommText";
 
 type ReservationCategoryProps = {
   index: number;
 };
 
 export const ReservationCategory = ({ index }: ReservationCategoryProps) => {
-  const setValue = useSetRecoilState(itemState(index));
+  const [value] = useRecoilState(itemState(index));
 
-  const handleChangeCategory = (category: string) => {
-    setValue((currVal) => ({
-      ...currVal,
-      category: category,
-    }));
-  };
-
-  return <TextInput onChangeText={handleChangeCategory} />;
+  return (
+    <View style={styles.container}>
+      <CommText>{value?.category?.text}</CommText>
+    </View>
+  );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  input: {
+    textAlign: "center",
+  },
+});

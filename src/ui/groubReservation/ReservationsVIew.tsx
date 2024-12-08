@@ -24,7 +24,10 @@ export const ReservationsView = () => {
       const list = data.list.map((item) => ({
         ...item,
         isSelected: false,
-        category: "",
+        category: {
+          text: "",
+          code: "",
+        },
         brand: "",
         margin: 20,
       }));

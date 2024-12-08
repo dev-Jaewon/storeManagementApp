@@ -1,10 +1,11 @@
 import { GroubReservationItem as RequestGroubReservationItem } from "@/src/util/typeApi/GroubReservation";
 import { atom, selectorFamily } from "recoil";
+import { Category } from "./category";
 
 export type GroubReservationItem = {
   isSelected?: boolean;
   brand?: string;
-  category?: string;
+  category?: Category;
   margin?: number;
 } & RequestGroubReservationItem;
 
