@@ -1,6 +1,7 @@
 import React from "react";
 import { Tabs } from "expo-router";
 import { Icons } from "@/src/ui/common/Icons";
+import { Platform } from "react-native";
 
 export default function TabLayout() {
   return (
@@ -9,6 +10,11 @@ export default function TabLayout() {
         headerShown: false,
         tabBarStyle: {
           height: 60,
+          ...(Platform.OS === "web" && {
+            alignSelf: "center",
+            maxWidth: 600,
+            width: "100%",
+          }),
         },
         tabBarIconStyle: {
           marginTop: 3,
