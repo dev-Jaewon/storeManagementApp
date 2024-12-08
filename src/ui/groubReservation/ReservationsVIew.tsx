@@ -30,6 +30,7 @@ export const ReservationsView = () => {
         },
         brand: "",
         margin: 20,
+        image_data: [],
       }));
 
       setValue({ list });

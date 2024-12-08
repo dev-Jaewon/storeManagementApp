@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { GroubReservationItem } from "../../util/typeApi/GroubReservation";
 import { ReservationPirce } from "./ReservationPirce";
 import { ReservationSelect } from "./ReservationSelect";
@@ -7,12 +7,15 @@ import { ReservationTitle } from "./ReservationTitle";
 import { ReservationBrand } from "./ReservationBrand";
 import { ReservationCategory } from "./ReservationCategory";
 import { ReservationMargin } from "./ReservationMargin";
+import { useImageSelector } from "./modal/useImageSelector";
 
 type ReservationContentProps = {
   list: GroubReservationItem[];
 };
 
 export const ReservationContent = ({ list }: ReservationContentProps) => {
+  const imageSelector = useImageSelector();
+
   return (
     <View>
       {list.map((item, index) => (
@@ -20,9 +23,17 @@ export const ReservationContent = ({ list }: ReservationContentProps) => {
           <View style={styles.cell}>
             <ReservationSelect index={index} />
           </View>
-          <View style={styles.cell}>
+          <TouchableOpacity
+            style={[styles.cell]}
+            onPress={() =>
+              imageSelector.show({
+                list: item.image_data,
+                index,
+              })
+            }
+          >
             <ReservationThumbnail index={index} />
-          </View>
+          </TouchableOpacity>
           <View style={[styles.cell, styles.titleCell]}>
             <ReservationTitle index={index} />
           </View>

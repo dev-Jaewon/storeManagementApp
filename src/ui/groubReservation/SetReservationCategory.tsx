@@ -27,7 +27,7 @@ export const SetReservationCategory = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        style={[styles.button, styles.openButton]}
+        style={[styles.openButton]}
         onPress={handleSelectCategory}
       >
         <TextInput
