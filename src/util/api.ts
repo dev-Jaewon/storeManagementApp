@@ -25,6 +25,7 @@ import {
   ResponseOrderInfo,
 } from "./typeApi/OrderState";
 import { Notification } from "./typeApi/Notification";
+import { ResponseGroubReservation } from "./typeApi/GroubReservation";
 
 const api = axios.create({
   // baseURL: 'http://localhost:8080'
@@ -114,5 +115,12 @@ export const getOrderInfo = async (
 
 export const getNotification = async (): Promise<Notification[]> => {
   const response = await api.get("/naver/notification");
+  return response.data;
+};
+
+export const getGroubReservation = async (
+  url: string
+): Promise<ResponseGroubReservation> => {
+  const response = await api.get(`/groub-reservation?url=${url}`);
   return response.data;
 };
