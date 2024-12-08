@@ -1,10 +1,10 @@
-import { StyleSheet, TextInput, View } from "react-native";
+import { View, StyleSheet, TextInput } from "react-native";
 import { CommText } from "../common/CommText";
 
-export const SetReservationBrand = () => {
+export const SetReservationCountry = () => {
   return (
     <View style={styles.container}>
-      <CommText>브랜드</CommText>
+      <CommText>통화</CommText>
       <TextInput style={styles.input} />
     </View>
   );
@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     gap: 10,
+    paddingHorizontal: 10,
     alignItems: "center",
   },
   input: {
@@ -25,4 +26,3 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
 });
-``;

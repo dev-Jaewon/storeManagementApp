@@ -4,7 +4,6 @@ import { ReservationPirce } from "./ReservationPirce";
 import { ReservationSelect } from "./ReservationSelect";
 import { ReservationThumbnail } from "./ReservationThumbnail";
 import { ReservationTitle } from "./ReservationTitle";
-import { ReservationBrand } from "./ReservationBrand";
 import { ReservationCategory } from "./ReservationCategory";
 import { ReservationMargin } from "./ReservationMargin";
 import { useImageSelector } from "./modal/useImageSelector";
@@ -36,9 +35,6 @@ export const ReservationContent = ({ list }: ReservationContentProps) => {
           </TouchableOpacity>
           <View style={[styles.cell, styles.titleCell]}>
             <ReservationTitle index={index} />
-          </View>
-          <View style={styles.cell}>
-            <ReservationBrand index={index} />
           </View>
           <View style={styles.cell}>
             <ReservationCategory index={index} />

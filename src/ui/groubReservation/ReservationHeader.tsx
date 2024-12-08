@@ -15,9 +15,6 @@ export const ReservationHeader = () => {
         <CommText>상품명</CommText>
       </View>
       <View style={styles.headerCell}>
-        <CommText>브랜드</CommText>
-      </View>
-      <View style={styles.headerCell}>
         <CommText>카테고리</CommText>
       </View>
       <View style={styles.headerCell}>

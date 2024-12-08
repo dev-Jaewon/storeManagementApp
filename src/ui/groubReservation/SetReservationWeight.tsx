@@ -1,10 +1,10 @@
-import { StyleSheet, TextInput, View } from "react-native";
+import { View, StyleSheet, TextInput } from "react-native";
 import { CommText } from "../common/CommText";
 
-export const SetReservationBrand = () => {
+export const SetReservationWeight = () => {
   return (
     <View style={styles.container}>
-      <CommText>브랜드</CommText>
+      <CommText>무게</CommText>
       <TextInput style={styles.input} />
     </View>
   );
@@ -25,4 +25,3 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
 });
-``;

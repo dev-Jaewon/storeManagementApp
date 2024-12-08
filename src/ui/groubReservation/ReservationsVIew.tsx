@@ -28,7 +28,6 @@ export const ReservationsView = () => {
           text: "",
           code: "",
         },
-        brand: "",
         margin: 20,
         image_data: [],
       }));
