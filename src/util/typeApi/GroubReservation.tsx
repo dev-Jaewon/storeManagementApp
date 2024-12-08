@@ -1,3 +1,4 @@
+import { GroubReservation } from "@/store/GroubReservation";
 import { ImageData } from "./SearchType";
 
 export type GroubReservationItem = {
@@ -13,4 +14,10 @@ export type GroubReservationItem = {
 export type ResponseGroubReservation = {
   list: GroubReservationItem[];
   totalCount: number;
+};
+
+export type RequestUploadGroubReservation = GroubReservation;
+
+export type ResponseUploadGroubReservation = {
+  message: string;
 };

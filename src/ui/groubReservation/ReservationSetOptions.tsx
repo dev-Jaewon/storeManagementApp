@@ -4,6 +4,9 @@ import { SetReservationCategory } from "./SetReservationCategory";
 import { SetReservationCountry } from "./SetReservationCountry";
 import { SetReservationWeight } from "./SetReservationWeight";
 import { SetReservationBrand } from "./SetReservationBrand";
+import { SetReservationSale } from "./SetReservationSale";
+import { ReservationButton } from "./ReservationButton";
+import { SetTranslateTitle } from "./SetTranslateTitle";
 
 export const ReservationSetOptions = () => {
   return (
@@ -13,7 +16,10 @@ export const ReservationSetOptions = () => {
         <SetReservationBrand />
         <SetReservationCountry />
         <SetReservationWeight />
+        <SetReservationSale />
       </View>
+      <SetTranslateTitle />
+      <ReservationButton />
     </View>
   );
 };

@@ -32,7 +32,7 @@ export const ReservationsView = () => {
         image_data: [],
       }));
 
-      setValue({ list });
+      setValue((prev) => ({ ...prev, list }));
     }
   }, [data]);
 

@@ -1,11 +1,24 @@
 import { StyleSheet, TextInput, View } from "react-native";
 import { CommText } from "../common/CommText";
+import { useRecoilState } from "recoil";
+import { groubReservation } from "@/store/GroubReservation";
 
 export const SetReservationBrand = () => {
+  const [value, setValue] = useRecoilState(groubReservation);
+
   return (
     <View style={styles.container}>
       <CommText>브랜드</CommText>
-      <TextInput style={styles.input} />
+      <TextInput
+        style={styles.input}
+        defaultValue={value.common.brand}
+        onChangeText={(text) =>
+          setValue((prev) => ({
+            ...prev,
+            common: { ...prev.common, brand: text },
+          }))
+        }
+      />
     </View>
   );
 };

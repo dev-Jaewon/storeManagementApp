@@ -17,6 +17,7 @@ export const SetReservationCategory = () => {
 
   const handleApplyCategory = () => {
     setReservation((prev) => ({
+      ...prev,
       list: prev.list.map((item) => ({
         ...item,
         category: item.isSelected ? category : item.category,

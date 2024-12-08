@@ -1,11 +1,24 @@
 import { View, StyleSheet, TextInput } from "react-native";
 import { CommText } from "../common/CommText";
+import { useRecoilState } from "recoil";
+import { groubReservation } from "@/store/GroubReservation";
 
 export const SetReservationWeight = () => {
+  const [value, setValue] = useRecoilState(groubReservation);
+
   return (
     <View style={styles.container}>
       <CommText>무게</CommText>
-      <TextInput style={styles.input} />
+      <TextInput
+        style={styles.input}
+        defaultValue={value.common.weight}
+        onChangeText={(text) =>
+          setValue((prev) => ({
+            ...prev,
+            common: { ...prev.common, weight: text },
+          }))
+        }
+      />
     </View>
   );
 };

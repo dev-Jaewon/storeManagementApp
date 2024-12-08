@@ -11,10 +11,22 @@ export type GroubReservationItem = {
 
 export type GroubReservation = {
   list: GroubReservationItem[];
+  common: {
+    brand: string;
+    country: string;
+    weight: string;
+    sale: number;
+  };
 };
 
 export const initialGroubReservation: GroubReservation = {
   list: [],
+  common: {
+    brand: "",
+    country: "JPY",
+    weight: "1",
+    sale: 3,
+  },
 };
 
 export const groubReservation = atom<GroubReservation>({
@@ -40,6 +52,7 @@ export const itemState = selectorFamily<GroubReservationItem, number>({
 
       set(groubReservation, {
         list: updatedList,
+        common: reservation.common,
       });
     },
 });

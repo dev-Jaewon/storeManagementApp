@@ -25,7 +25,15 @@ import {
   ResponseOrderInfo,
 } from "./typeApi/OrderState";
 import { Notification } from "./typeApi/Notification";
-import { ResponseGroubReservation } from "./typeApi/GroubReservation";
+import {
+  RequestUploadGroubReservation,
+  ResponseGroubReservation,
+  ResponseUploadGroubReservation,
+} from "./typeApi/GroubReservation";
+import {
+  RequestTranslateTitle,
+  ResponseTranslateTitle,
+} from "./typeApi/TranslateTitle";
 
 const api = axios.create({
   // baseURL: 'http://localhost:8080'
@@ -122,5 +130,19 @@ export const getGroubReservation = async (
   url: string
 ): Promise<ResponseGroubReservation> => {
   const response = await api.get(`/groub-reservation?url=${url}`);
+  return response.data;
+};
+
+export const uploadGroubReservation = async (
+  data: RequestUploadGroubReservation
+): Promise<ResponseUploadGroubReservation> => {
+  const response = await api.post("/upload/groub-reservation", data);
+  return response.data;
+};
+
+export const translateTitle = async (
+  data: RequestTranslateTitle
+): Promise<ResponseTranslateTitle> => {
+  const response = await api.post("/translate/title", data);
   return response.data;
 };

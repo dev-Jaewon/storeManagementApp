@@ -1,21 +1,21 @@
 import { View, StyleSheet, TextInput } from "react-native";
-import { CommText } from "../common/CommText";
 import { useRecoilState } from "recoil";
 import { groubReservation } from "@/store/GroubReservation";
+import { CommText } from "../common/CommText";
 
-export const SetReservationCountry = () => {
+export const SetReservationSale = () => {
   const [value, setValue] = useRecoilState(groubReservation);
 
   return (
     <View style={styles.container}>
-      <CommText>통화</CommText>
+      <CommText>할인</CommText>
       <TextInput
         style={styles.input}
-        defaultValue={value.common.country}
+        defaultValue={value.common.sale.toString()}
         onChangeText={(text) =>
           setValue((prev) => ({
             ...prev,
-            common: { ...prev.common, country: text },
+            common: { ...prev.common, sale: Number(text) },
           }))
         }
       />
@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     gap: 10,
-    paddingHorizontal: 10,
     alignItems: "center",
   },
   input: {
