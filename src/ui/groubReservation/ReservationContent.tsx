@@ -7,6 +7,7 @@ import { ReservationTitle } from "./ReservationTitle";
 import { ReservationCategory } from "./ReservationCategory";
 import { ReservationMargin } from "./ReservationMargin";
 import { useImageSelector } from "./modal/useImageSelector";
+import { ReservationUrl } from "./ReservationUrl";
 
 type ReservationContentProps = {
   list: GroubReservationItem[];
@@ -21,6 +22,9 @@ export const ReservationContent = ({ list }: ReservationContentProps) => {
         <View key={index} style={styles.row}>
           <View style={styles.cell}>
             <ReservationSelect index={index} />
+          </View>
+          <View style={[styles.cell]}>
+            <ReservationUrl index={index} />
           </View>
           <TouchableOpacity
             style={[styles.cell]}

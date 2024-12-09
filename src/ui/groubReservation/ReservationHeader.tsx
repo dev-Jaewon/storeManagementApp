@@ -9,6 +9,9 @@ export const ReservationHeader = () => {
         <ReservationSelectAll />
       </View>
       <View style={styles.headerCell}>
+        <CommText>URL</CommText>
+      </View>
+      <View style={styles.headerCell}>
         <CommText>이미지</CommText>
       </View>
       <View style={[styles.headerCell, styles.titleCell]}>

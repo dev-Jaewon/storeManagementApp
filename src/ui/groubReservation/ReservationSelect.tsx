@@ -1,5 +1,5 @@
 import { itemState } from "@/store/GroubReservation";
-import { TouchableOpacity, StyleSheet } from "react-native";
+import { TouchableOpacity, StyleSheet, View } from "react-native";
 import { useRecoilState } from "recoil";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -20,18 +20,23 @@ export const ReservationSelect = ({ index }: ReservationSelectProps) => {
   if (!value?.isSelected && typeof value?.isSelected !== "boolean") return null;
 
   return (
-    <TouchableOpacity
-      style={[styles.checkbox, value.isSelected && styles.checked]}
-      onPress={handleToggleSelect}
-    >
-      {value?.isSelected && (
-        <Ionicons name="checkmark" size={20} color="#fff" />
-      )}
+    <TouchableOpacity onPress={handleToggleSelect} style={styles.container}>
+      <View style={[styles.checkbox, value.isSelected && styles.checked]}>
+        {value?.isSelected && (
+          <Ionicons name="checkmark" size={20} color="#fff" />
+        )}
+      </View>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    height: "100%",
+  },
   checkbox: {
     width: 24,
     height: 24,

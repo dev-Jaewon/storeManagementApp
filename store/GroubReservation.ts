@@ -16,6 +16,7 @@ export type GroubReservation = {
     country: string;
     weight: string;
     sale: number;
+    deliveryPrice: number;
   };
 };
 
@@ -26,6 +27,7 @@ export const initialGroubReservation: GroubReservation = {
     country: "JPY",
     weight: "1",
     sale: 3,
+    deliveryPrice: 0,
   },
 };
 
