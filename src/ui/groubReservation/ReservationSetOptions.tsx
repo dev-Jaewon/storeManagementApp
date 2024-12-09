@@ -7,6 +7,7 @@ import { SetReservationBrand } from "./SetReservationBrand";
 import { SetReservationSale } from "./SetReservationSale";
 import { ReservationButton } from "./ReservationButton";
 import { SetTranslateTitle } from "./SetTranslateTitle";
+import { SetDeliveryPrice } from "./SetDeliveryPrice";
 
 export const ReservationSetOptions = () => {
   return (
@@ -17,6 +18,7 @@ export const ReservationSetOptions = () => {
         <SetReservationCountry />
         <SetReservationWeight />
         <SetReservationSale />
+        <SetDeliveryPrice />
       </View>
       <SetTranslateTitle />
       <ReservationButton />
