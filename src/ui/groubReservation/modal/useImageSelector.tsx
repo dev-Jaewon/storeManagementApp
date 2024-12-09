@@ -45,6 +45,10 @@ export const useImageSelector = createUseModal<void, ImageSelectorParam>(
       }
     };
 
+    const getImageIndex = (imageUrl: string) => {
+      return value.image_data.findIndex((item) => item.url === imageUrl) + 1;
+    };
+
     return (
       <View style={styles.container}>
         <TouchableOpacity style={styles.overlay} onPress={confirm} />
@@ -71,7 +75,7 @@ export const useImageSelector = createUseModal<void, ImageSelectorParam>(
                     ) && (
                       <View style={styles.selectionBadge}>
                         <CommText style={styles.selectionText}>
-                          {index + 1}
+                          {getImageIndex(image.url)}
                         </CommText>
                       </View>
                     )}
