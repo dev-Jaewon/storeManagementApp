@@ -10,7 +10,9 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "eslint --fix --ext .ts,.tsx .",
-    "add-icon": "npx ts-node ./scripts/createIconComponent.ts"
+    "add-icon": "npx ts-node ./scripts/createIconComponent.ts",
+    "build-android": "eas build --platform android",
+    "build-ios": "eas build --platform ios"
   },
   "jest": {
     "preset": "jest-expo"
