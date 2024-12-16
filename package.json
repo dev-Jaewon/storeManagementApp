@@ -51,7 +51,9 @@
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.2",
     "recoil": "^0.7.7",
-    "storeapp": "file:"
+    "storeapp": "file:",
+    "expo-updates": "~0.26.10",
+    "expo-dev-client": "~5.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
