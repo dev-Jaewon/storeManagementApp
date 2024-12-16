@@ -1,4 +1,4 @@
-import { View, StyleSheet, TouchableOpacity, Platform } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { CommText } from "../common/CommText";
 import { useRouter } from "expo-router";
 import {
@@ -25,7 +25,7 @@ export const ProductSearch = () => {
       debounce((text: string) => {
         setSearchInfo({ ...searchInfo, titleKeyword: text });
       }, 300),
-    [searchInfo.titleKeyword]
+    [searchInfo.titleKeyword, searchInfo.size, searchInfo.page]
   );
 
   return (

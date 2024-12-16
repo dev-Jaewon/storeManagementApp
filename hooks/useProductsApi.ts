@@ -7,13 +7,15 @@ export const useProductsApi = () => {
   const { page, size, titleKeyword } = useRecoilValue(productSearchFilter);
 
   const query = useQuery({
-    queryKey: ["products", page, size, titleKeyword],
+    queryKey: ["searchProducts", page, size, titleKeyword],
     queryFn: () =>
       getProducts({
         page,
         size,
         titleKeyword,
       }),
+    refetchOnWindowFocus: false,
+    staleTime: 600000,
   });
 
   return query;

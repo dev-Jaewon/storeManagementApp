@@ -34,6 +34,7 @@ import {
   RequestTranslateTitle,
   ResponseTranslateTitle,
 } from "./typeApi/TranslateTitle";
+import { ResponseGroupList } from "./typeApi/GroubList";
 
 const api = axios.create({
   // baseURL: 'http://localhost:8080'
@@ -144,5 +145,10 @@ export const translateTitle = async (
   data: RequestTranslateTitle
 ): Promise<ResponseTranslateTitle> => {
   const response = await api.post("/translate/title", data);
+  return response.data;
+};
+
+export const getGroupSearchList = async (): Promise<ResponseGroupList> => {
+  const response = await api.get("/groub-list");
   return response.data;
 };
