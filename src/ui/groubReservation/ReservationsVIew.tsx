@@ -7,16 +7,16 @@ import { useSetRecoilState } from "recoil";
 import { ReservationHeader } from "./ReservationHeader";
 import { ReservationContent } from "./ReservationContent";
 import { ReservationSetOptions } from "./ReservationSetOptions";
+import { useLocalSearchParams } from "expo-router";
 
 export const ReservationsView = () => {
   const setValue = useSetRecoilState(groubReservation);
 
+  const { url } = useLocalSearchParams<{ url: string }>();
+
   const { data, isLoading } = useQuery({
     queryKey: ["groub-reservation"],
-    queryFn: () =>
-      getGroubReservation(
-        "https://item.rakuten.co.jp/majimaya/c/0000000796/?s=1&i=1#risFil"
-      ),
+    queryFn: () => getGroubReservation(url),
   });
 
   useEffect(() => {
