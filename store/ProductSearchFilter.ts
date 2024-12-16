@@ -7,7 +7,7 @@ export type ProductSearchFilter = {
 };
 
 export const initialProductSearchFilter: ProductSearchFilter = {
-  page: 0,
+  page: 1,
   size: 10,
   titleKeyword: "",
 };
